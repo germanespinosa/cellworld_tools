@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/parameters_builder.h
+json_cpp.h
+-
+iostream
+-
+web_resources.h
+-
+
+../include/web_resources.h
+any
+-
+vector
+-
+string
+-
+sstream
+-
+json_cpp.h
+-
+
+/home/german/simulation/cellworld_tools/src/find_pois.cpp
+iostream
+-
+cell_world.h
+-
+parameters_builder.h
+-
+

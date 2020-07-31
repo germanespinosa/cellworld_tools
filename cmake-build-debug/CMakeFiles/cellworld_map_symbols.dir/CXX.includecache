@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/map_symbols.h
+json_cpp.h
+-
+
+/home/german/simulation/cellworld_tools/src/map_symbols.cpp
+json_cpp.h
+-
+map_symbols.h
+-
+clocale
+-
+

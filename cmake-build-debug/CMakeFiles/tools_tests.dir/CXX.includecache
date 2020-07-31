@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/web_resources.h
+any
+-
+vector
+-
+string
+-
+sstream
+-
+json_cpp.h
+-
+
+/home/german/simulation/cellworld_tools/catchtests/web_resources.cpp
+catch.h
+-
+web_resources.h
+-
+cell_world.h
+-
+
+/usr/local/share/CatchTests/catchtests.cpp
+catch.h
+-
+iostream
+-
+
