@@ -1,9 +1,10 @@
 #include <iostream>
 #include <cell_world.h>
-#include <parameters_builder.h>
+#include <cell_world_tools/parameters_builder.h>
 
 using namespace cell_world;
 using namespace std;
+using namespace cell_world_tools;
 
 struct Parameters : Parameters_builder{
     World world;

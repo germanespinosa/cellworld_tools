@@ -1,10 +1,11 @@
 #include<catch.h>
-#include <web_resources.h>
 #include <cell_world.h>
+#include <cell_world_tools.h>
 
 using namespace std;
 using namespace cell_world;
 using namespace json_cpp;
+using namespace cell_world_tools;
 
 TEST_CASE("key tests"){
     auto wr = Web_resource::from("cell_group");

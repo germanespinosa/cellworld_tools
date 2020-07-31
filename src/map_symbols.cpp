@@ -1,8 +1,9 @@
 #include <json_cpp.h>
-#include <map_symbols.h>
-#include <clocale>
+#include <cell_world_tools/map_symbols.h>
 
 using namespace std;
+using namespace cell_world_tools;
+
 int main(){
     Map_symbols ms;
     cout << "Symbols loaded successfully" << endl;
