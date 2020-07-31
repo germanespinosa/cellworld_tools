@@ -78,7 +78,7 @@ namespace cell_world_tools {
 
     Parameters_loader::Parameters_loader(int argc, char **argv) {
         program_name = argv[0];
-        for (unsigned int i = 1; i < argc - 1; i++) {
+        for (int i = 1; i < argc - 1; i++) {
             string name(argv[i]);
             if (name[0] == '-') {
                 name.erase(0, 1);

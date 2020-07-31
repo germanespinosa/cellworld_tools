@@ -1,50 +1,102 @@
 cmake_minimum_required( VERSION 3.13 )
-project( tools CXX )
 
 set(CMAKE_CXX_STANDARD 17)
 
-find_package( Cellworld CONFIG QUIET )
+project( cellworld_tools
+        VERSION 2019.1.0
+        DESCRIPTION "Cellworld utilities"
+        LANGUAGES CXX)
 
-add_library(tools
+find_package(Cellworld CONFIG QUIET)
+
+###
+### MAIN LIBRARY SETUP
+###
+
+set(cellworld_tools_files
         src/parameters_builder.cpp
         src/web_resources.cpp)
 
-target_link_libraries( tools PUBLIC cellworld )
+add_library(cellworld_tools ${cellworld_tools_files})
+
+set_target_properties(cellworld_tools
+        PROPERTIES
+        CXX_STANDARD 17
+        CXX_STANDARD_REQUIRED On
+        CXX_EXTENSIONS Off
+        VERSION ${PROJECT_VERSION})
+
+if(MSVC)
+    target_compile_options(cellworld_tools PRIVATE /W4)
+else(MSVC)
+    target_compile_options(cellworld_tools PRIVATE -Wall -Wextra -pedantic)
+endif(MSVC)
+
+target_include_directories(cellworld_tools
+        SYSTEM INTERFACE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>)
+
+target_include_directories(cellworld_tools
+        PRIVATE
+        include )
+
+target_link_libraries( cellworld_tools
+        PUBLIC
+        cellworld)
+
+
+###
+### UTILITIES SETUP
+###
 
 include_directories( include )
 
 add_executable(cellworld_find_pois src/find_pois.cpp)
-target_link_libraries( cellworld_find_pois PUBLIC tools )
+target_link_libraries( cellworld_find_pois PUBLIC cellworld_tools )
 
 add_executable(cellworld_show_cell_group src/show_cell_group.cpp)
-target_link_libraries( cellworld_show_cell_group PUBLIC tools )
+target_link_libraries( cellworld_show_cell_group PUBLIC cellworld_tools )
 
 add_executable(cellworld_show_world src/show_world.cpp)
-target_link_libraries( cellworld_show_world PUBLIC tools )
+target_link_libraries( cellworld_show_world PUBLIC cellworld_tools )
 
 add_executable(cellworld_show_graph src/show_graph.cpp)
-target_link_libraries( cellworld_show_graph PUBLIC tools )
+target_link_libraries( cellworld_show_graph PUBLIC cellworld_tools )
 
 add_executable(cellworld_create_paths src/create_paths.cpp)
-target_link_libraries( cellworld_create_paths PUBLIC tools )
+target_link_libraries( cellworld_create_paths PUBLIC cellworld_tools )
 
 add_executable(cellworld_create_visibility src/create_visibility.cpp)
-target_link_libraries( cellworld_create_visibility PUBLIC tools )
+target_link_libraries( cellworld_create_visibility PUBLIC cellworld_tools )
 
 add_executable(cellworld_show_paths src/show_paths.cpp)
-target_link_libraries( cellworld_show_paths PUBLIC tools )
+target_link_libraries( cellworld_show_paths PUBLIC cellworld_tools )
 
 add_executable(cellworld_map_symbols src/map_symbols.cpp)
-target_link_libraries( cellworld_map_symbols PUBLIC tools )
-
-add_custom_target(cellworld_default_map)
-
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/res/map_symbols.json ${CMAKE_CURRENT_BINARY_DIR}/map_symbols.json COPYONLY)
+target_link_libraries( cellworld_map_symbols PUBLIC cellworld_tools )
 
 ###
 ### TESTS
 ###
 find_package(CatchTests CONFIG QUIET)
+
+###
+### LIBRARY INSTALLATION
+###
+
+include(GNUInstallDirs)
+
+install(TARGETS cellworld_tools EXPORT Cellworld_toolsConfig
+        ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
+
+install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+
+###
+### UTILITIES INSTALLATION
+###
 
 include(GNUInstallDirs)
 
