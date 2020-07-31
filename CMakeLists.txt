@@ -94,6 +94,10 @@ install(TARGETS cellworld_tools EXPORT Cellworld_toolsConfig
 
 install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
+install(EXPORT Cellworld_toolsConfig
+        DESTINATION ${CMAKE_INSTALL_DATADIR}/cmake/Cellworld_tools
+        EXPORT_LINK_INTERFACE_LIBRARIES)
+
 ###
 ### UTILITIES INSTALLATION
 ###
