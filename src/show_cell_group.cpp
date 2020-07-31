@@ -12,8 +12,8 @@ struct Parameters : Parameters_builder{
     World world;
     Cell_group_builder cell_group;
     Parameters_definitions({
-       Add_web_resource(world, "worlds", ({"world"}));
-       Add_web_resource(cell_group, "cell_groups", ({"world","cell_group"}));
+       Add_web_resource(world, ({"world"}));
+       Add_web_resource(cell_group, ({"world","cell_group"}));
    })
 };
 

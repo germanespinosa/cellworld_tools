@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 #include <sstream>
-#include <json_cpp.h>
+#include <fstream>
 
 struct Web_resource {
     static Web_resource from(const std::string);
@@ -11,10 +11,12 @@ struct Web_resource {
     Web_resource &key(int);
     Web_resource &key(unsigned int);
     Web_resource &key(const char *);
-    json_cpp::Json_web_response get();
+    std::istream &get();
     std::string url();
 private:
+    std::string _file_name();
     std::string _resource;
     std::vector<std::string> _keys;
+    std::ifstream _resource_stream;
     Web_resource () = default;
 };

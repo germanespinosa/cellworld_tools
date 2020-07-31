@@ -25,8 +25,7 @@ bool Parameters_builder::load(int argc, char **argv) {
             } else {
                 auto wr = Web_resource::from(_parameters_resources[i]);
                 for (auto &k: _parameters_keys[i]) wr.key(_cmd_parameters[k]);
-                auto response = wr.get();
-                jb.members[i].ref->json_parse(response.get_stream());
+                jb.members[i].ref->json_parse(wr.get());
             }
         }
     }

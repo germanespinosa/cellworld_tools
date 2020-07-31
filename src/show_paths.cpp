@@ -13,8 +13,8 @@ struct Parameters : Parameters_builder{
     Path_builder paths;
     Coordinates destination;
     Parameters_definitions({
-        Add_web_resource(world, "worlds", ({"world"}));
-        Add_web_resource(paths, "paths", ({"world","paths"}));
+        Add_web_resource(world, ({"world"}));
+        Add_web_resource(paths, ({"world","paths"}));
         Add_value(destination);
     })
 };

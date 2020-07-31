@@ -13,8 +13,8 @@ struct Parameters : Parameters_builder{
     Graph_builder graph;
     Coordinates source;
     Parameters_definitions({
-        Add_web_resource(world, "worlds", ({"world"}));
-        Add_web_resource(graph, "graphs", ({"world","graph"}));
+        Add_web_resource(world, ({"world"}));
+        Add_web_resource(graph, ({"world","graph"}));
         Add_value(source);
     })
 };

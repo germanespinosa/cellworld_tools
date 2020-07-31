@@ -9,7 +9,7 @@ struct Parameters : Parameters_builder{
     World world;
     string path_type;
     Parameters_definitions({
-        Add_web_resource(world, "worlds", ({"world"}));
+        Add_web_resource(world, ({"world"}));
         Add_value(path_type);
     })
 };

@@ -10,7 +10,7 @@ struct Parameters : Parameters_builder{
     World world;
     Coordinates_list extra_pois;
     Parameters_definitions({
-       Add_web_resource(world, "worlds", ({"world"}));
+       Add_web_resource(world, ({"world"}));
        Add_value(extra_pois);
    })
 };

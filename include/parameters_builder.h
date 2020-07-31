@@ -3,8 +3,11 @@
 #include <iostream>
 #include <web_resources.h>
 
-#define Add_web_resource(PARAMETER, RESOURCE_NAME, KEYS) \
-    _add_param(#PARAMETER, RESOURCE_NAME, std::vector<std::string>KEYS); \
+#define Add_web_resource(PARAMETER, KEYS) \
+    _add_param(#PARAMETER, #PARAMETER, std::vector<std::string>KEYS); \
+    Add_member(PARAMETER)
+#define Add_web_resource_from_table(PARAMETER, TABLE, KEYS) \
+    _add_param(#PARAMETER, TABLE, std::vector<std::string>KEYS); \
     Add_member(PARAMETER)
 #define Add_value(PARAMETER) \
     _add_param(#PARAMETER); \

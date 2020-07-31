@@ -8,7 +8,7 @@ using namespace std;
 struct Parameters : Parameters_builder{
     World world;
     Parameters_definitions({
-        Add_web_resource(world, "worlds", ({"world"}));
+        Add_web_resource(world, ({"world"}));
     })
 };
 
