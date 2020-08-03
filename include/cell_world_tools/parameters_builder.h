@@ -36,6 +36,8 @@ namespace cell_world_tools {
     struct Parameters_builder : json_cpp::Json_object {
         bool load(int argc, char **argv);
 
+        Parameters_loader cmd_parameters;
+
     protected:
         bool _check_parameters();
 
@@ -50,7 +52,6 @@ namespace cell_world_tools {
         void _add_param(const std::string &, const std::string &, const std::vector<std::string> &)
         const {}
 
-        Parameters_loader _cmd_parameters;
         std::vector<std::string> _parameters_names;
         std::vector<std::string> _parameters_resources;
         std::vector<std::vector<std::string>> _parameters_keys;

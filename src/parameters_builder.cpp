@@ -6,7 +6,7 @@ namespace cell_world_tools {
         if (cin.gcount()) {
             cin >> *this;
         } else {
-            _cmd_parameters = Parameters_loader(argc, argv);
+            cmd_parameters = Parameters_loader(argc, argv);
             json_cpp::Json_builder jb;
             json_set_builder(jb);
             if (_check_parameters()) {
@@ -15,7 +15,7 @@ namespace cell_world_tools {
             }
             for (unsigned int i = 0; i < jb.members.size(); i++) {
                 string name = jb.members[i].name;
-                string value = _cmd_parameters[name];
+                string value = cmd_parameters[name];
                 if (_parameters_resources[i].empty()) {
                     auto &a = *(jb.members[i].ref);
                     if (a.require_quotes) {
@@ -24,7 +24,7 @@ namespace cell_world_tools {
                     value >> *(jb.members[i].ref);
                 } else {
                     auto wr = Web_resource::from(_parameters_resources[i]);
-                    for (auto &k: _parameters_keys[i]) wr.key(_cmd_parameters[k]);
+                    for (auto &k: _parameters_keys[i]) wr.key(cmd_parameters[k]);
                     jb.members[i].ref->json_parse(wr.get());
                 }
             }
@@ -47,21 +47,21 @@ namespace cell_world_tools {
 
     void Parameters_builder::_show_help() {
         cerr << "Usage:" << endl
-             << "\t" << _cmd_parameters.program_name << " ";
+             << "\t" << cmd_parameters.program_name << " ";
         for (unsigned int i = 0; i < _parameters_names.size(); i++) {
             string p = _parameters_names[i];
             string k = _parameters_keys[i].empty() ? " value" : " key";
             cerr << "-" << p << " [" << p << k << "] ";
         }
-        cerr << endl << "\t[pipe_generator] | " << _cmd_parameters.program_name << endl;
+        cerr << endl << "\t[pipe_generator] | " << cmd_parameters.program_name << endl;
         exit(EXIT_FAILURE);
     }
 
     bool Parameters_builder::_check_parameters() {
-        if (_cmd_parameters.empty()) return true;
+        if (cmd_parameters.empty()) return true;
         bool fail = false;
         for (auto &m:_parameters_names) {
-            if (!_cmd_parameters.contains(m)) {
+            if (!cmd_parameters.contains(m)) {
                 cerr << "missing parameter -" + m << endl;
                 fail = true;
             }
