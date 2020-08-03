@@ -43,7 +43,7 @@ target_include_directories(cellworld_tools
 
 target_link_libraries( cellworld_tools
         PUBLIC
-        cellworld)
+        ${CELLWORLD_LIBRARIES})
 
 
 ###
@@ -99,7 +99,8 @@ install(EXPORT Cellworld_toolsConfig
         EXPORT_LINK_INTERFACE_LIBRARIES)
 
 export(TARGETS cellworld_tools FILE Cellworld_toolsConfig.cmake)
-
+install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Cellworld_tools/Cellworld_toolsConfig.cmake \"find_package(Cellworld REQUIRED)\n\") ")
+install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Cellworld/CellworldConfig.cmake \"set(CELLWORLD_TOOL_LIBRARIES cellworld_tools ${CELLWORLD_LIBRARIES})\n\") ")
 ###
 ### UTILITIES INSTALLATION
 ###
