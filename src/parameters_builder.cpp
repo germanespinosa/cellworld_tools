@@ -84,6 +84,7 @@ namespace cell_world_tools {
                 name.erase(0, 1);
                 _parameters_names.push_back(name);
                 _parameters_value.emplace_back(argv[i + 1]);
+                cout << name << " :" << argv[i + 1] << endl;
             }
         }
     }
