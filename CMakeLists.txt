@@ -119,6 +119,7 @@ install(TARGETS cellworld_show_cell_group
                 cellworld_create_paths
                 cellworld_show_paths
                 cellworld_create_visibility
+                cellworld_create_poi_graph
         RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 find_package( Cellworld CONFIG QUIET )

@@ -11,11 +11,11 @@ Map_symbols ms;
 
 struct Parameters : Parameters_builder{
     World world;
-    Path_builder paths;
+    Path_builder path_type;
     Coordinates destination;
     Parameters_definitions({
         Add_web_resource(world, ({"world"}));
-        Add_web_resource(paths, ({"world","paths"}));
+        Add_web_resource_from_table(path_type, "paths", ({"world","path_type"}));
         Add_value(destination);
     })
 };
@@ -45,7 +45,7 @@ int main(int argc, char **argv) {
     cout << "connection_pattern: " << p.world.connection_pattern << endl;
     cout << "cells: " << p.world.size() << endl;
     cout << "occlusions: " << p.world.create_cell_group().occluded_cells().size() << endl;
-    Paths paths = p.world.create_paths(p.paths);
+    Paths paths = p.world.create_paths(p.path_type);
     cout << "Paths loaded successfully" << endl;
     cout << "size: " << paths.moves.size() << endl;
     Graph graph = p.world.create_graph();
