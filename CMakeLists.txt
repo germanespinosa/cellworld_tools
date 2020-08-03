@@ -46,6 +46,8 @@ target_link_libraries( cellworld_tools
         ${CELLWORLD_LIBRARIES})
 
 
+message("here ${CMAKE_BINARY_DIR}")
+
 ###
 ### UTILITIES SETUP
 ###
@@ -66,6 +68,9 @@ target_link_libraries( cellworld_show_graph PUBLIC cellworld_tools )
 
 add_executable(cellworld_create_paths src/create_paths.cpp)
 target_link_libraries( cellworld_create_paths PUBLIC cellworld_tools )
+
+add_executable(cellworld_create_poi_graph src/create_poi_graph.cpp)
+target_link_libraries( cellworld_create_poi_graph PUBLIC cellworld_tools )
 
 add_executable(cellworld_create_visibility src/create_visibility.cpp)
 target_link_libraries( cellworld_create_visibility PUBLIC cellworld_tools )
@@ -100,7 +105,7 @@ install(EXPORT Cellworld_toolsConfig
 
 export(TARGETS cellworld_tools FILE Cellworld_toolsConfig.cmake)
 install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Cellworld_tools/Cellworld_toolsConfig.cmake \"find_package(Cellworld REQUIRED)\n\") ")
-install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Cellworld/CellworldConfig.cmake \"set(CELLWORLD_TOOLS_LIBRARIES cellworld_tools ${CELLWORLD_LIBRARIES})\n\") ")
+install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Cellworld_tools/Cellworld_toolsConfig.cmake \"set(CELLWORLD_TOOLS_LIBRARIES cellworld_tools ${CELLWORLD_LIBRARIES})\n\") ")
 ###
 ### UTILITIES INSTALLATION
 ###
