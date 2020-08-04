@@ -46,8 +46,6 @@ target_link_libraries( cellworld_tools
         ${CELLWORLD_LIBRARIES})
 
 
-message("here ${CMAKE_BINARY_DIR}")
-
 ###
 ### UTILITIES SETUP
 ###

@@ -25,13 +25,15 @@ int main(int argc, char **argv) {
     Cell_group free_cells = p.world.create_cell_group().free_cells();
     Map map = Map(free_cells);
     Graph pois_graph (free_cells);
-    for (auto &cell:free_cells) {
-        for (auto &poi: pois) {
+    for (const Cell& cell:free_cells) {
+        for (const Cell& poi: pois) {
             Cell current = cell;
-            Cell_group trajectory;
-            while(!pois.contains(current) && !trajectory.contains(current)) {
-                trajectory.add(current);
-                current = map[current.coordinates + paths.get_move(current,poi)];
+            if (current != poi) {
+                Cell_group trajectory;
+                while ( !trajectory.contains(current) && (!pois.contains(current) || current == cell)) {
+                    trajectory.add(current);
+                    current = map[current.coordinates + paths.get_move(current, poi)];
+                }
             }
             if (current == poi) {
                 pois_graph[cell].add(poi);
