@@ -4,7 +4,13 @@ using namespace std;
 namespace cell_world_tools {
     bool Parameters_builder::load(int argc, char **argv) {
         if (cin.gcount()) {
-            cin >> *this;
+            try {
+                cin >> *this;
+            } catch (exception ) {
+                cerr << "error parsing pipe content" << endl;
+                _show_help();
+                exit(EXIT_FAILURE);
+            }
         } else {
             cmd_parameters = Parameters_loader(argc, argv);
             json_cpp::Json_builder jb;
@@ -16,16 +22,29 @@ namespace cell_world_tools {
             for (unsigned int i = 0; i < jb.members.size(); i++) {
                 string name = jb.members[i].name;
                 string value = cmd_parameters[name];
+                //cout << "parsing parameter '" << name << "' with value '" << value << "'" << endl;
                 if (_parameters_resources[i].empty()) {
                     auto &a = *(jb.members[i].ref);
                     if (a.require_quotes) {
                         value = '"' + value + '"';
                     }
-                    value >> *(jb.members[i].ref);
+                    try {
+                        value >> *(jb.members[i].ref);
+                    } catch (exception ){
+                        cerr << "error parsing parameter '" << name << "' with value '" << value << "'" << endl;
+                        _show_help();
+                        exit(EXIT_FAILURE);
+                    }
                 } else {
                     auto wr = Web_resource::from(_parameters_resources[i]);
                     for (auto &k: _parameters_keys[i]) wr.key(cmd_parameters[k]);
-                    jb.members[i].ref->json_parse(wr.get());
+                    try {
+                        jb.members[i].ref->json_parse(wr.get());
+                    } catch (exception ){
+                        cerr << "error parsing parameter '" << name << "' from url '" << wr.url() << "'" << endl;
+                        _show_help();
+                        exit(EXIT_FAILURE);
+                    }
                 }
             }
         }
