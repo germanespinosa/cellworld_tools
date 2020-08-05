@@ -19,20 +19,21 @@ struct Parameters : Parameters_builder{
 int main(int argc, char **argv) {
     Parameters p;
     p.load(argc, argv);
-    Cell_group pois = p.world.create_cell_group(Json_create<Cell_group_builder>(Web_resource::from("cell_group").key(p.world
-            .name).key("pois").get()));
+    Cell_group pois = p.world.create_cell_group(Json_create<Cell_group_builder>(Web_resource::from("cell_group").key(p.world.name).key("pois").get()));
     Paths paths = p.world.create_paths(p.path_type);
-    Cell_group free_cells = p.world.create_cell_group().free_cells();
-    Map map = Map(free_cells);
-    Graph pois_graph (free_cells);
+    Cell_group cells = p.world.create_cell_group();
+    Map map = Map(cells);
+    Graph pois_graph (cells);
+    Cell_group free_cells = cells.free_cells();
     for (const Cell& cell:free_cells) {
         for (const Cell& poi: pois) {
             Cell current = cell;
             if (current != poi) {
                 Cell_group trajectory;
-                while ( !trajectory.contains(current) && (!pois.contains(current) || current == cell)) {
+                while ( !trajectory.contains(current) && !pois.contains(current)) {
                     trajectory.add(current);
-                    current = map[current.coordinates + paths.get_move(current, poi)];
+                    Move move = paths.get_move(current, poi);
+                    current = map[current.coordinates + move];
                 }
             }
             if (current == poi) {

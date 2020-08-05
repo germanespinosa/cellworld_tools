@@ -24,3 +24,7 @@ TEST_CASE("get_world"){
 TEST_CASE("get_paths"){
     CHECK_NOTHROW(Json_create<Path_builder> (Web_resource::from("paths").key("world_0_0").key("astar").get()));
 }
+
+TEST_CASE("CACHE FOLDER"){
+    cout << Web_resource::cache_folder() << endl;
+}

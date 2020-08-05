@@ -6,6 +6,7 @@
 #include <fstream>
 namespace cell_world_tools {
     struct Web_resource {
+        static std::string &cache_folder();
         static Web_resource from(const std::string);
         Web_resource &key(const std::string &);
         Web_resource &key(int);

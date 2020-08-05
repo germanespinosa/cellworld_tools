@@ -28,7 +28,7 @@ namespace cell_world_tools {
     }
 
     std::istream &Web_resource::get() {
-        string cfn = "." + _resource + "." + _file_name();
+        string cfn = cache_folder() + "/" + _resource + "." + _file_name();
         ifstream cache(cfn);
         if (cache.good()) {
             _resource_stream = std::move(cache);
@@ -59,5 +59,10 @@ namespace cell_world_tools {
             fn += k;
         }
         return fn;
+    }
+
+    std::string &Web_resource::cache_folder() {
+        static string folder(std::getenv("CELLWORLD_CACHE"));
+        return folder;
     }
 }
