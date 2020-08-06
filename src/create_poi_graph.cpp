@@ -30,7 +30,8 @@ int main(int argc, char **argv) {
             Cell current = cell;
             if (current != poi) {
                 Cell_group trajectory;
-                while ( !trajectory.contains(current) && !pois.contains(current)) {
+                while ( !trajectory.contains(current) &&
+                        (cell == current || !pois.contains(current))) {
                     trajectory.add(current);
                     Move move = paths.get_move(current, poi);
                     current = map[current.coordinates + move];

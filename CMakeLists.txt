@@ -7,7 +7,7 @@ project( cellworld_tools
         DESCRIPTION "Cellworld utilities"
         LANGUAGES CXX)
 
-find_package(Cellworld CONFIG QUIET)
+find_package(Cellworld REQUIRED)
 
 ###
 ### MAIN LIBRARY SETUP

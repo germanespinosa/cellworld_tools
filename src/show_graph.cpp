@@ -31,6 +31,7 @@ int main(int argc, char **argv) {
     Graph graph = p.world.create_graph(p.graph);
     Map map (p.world.create_cell_group());
     const Cell &source = map[p.source];
+    cout << "source connections: " << graph[source].size() << endl;
     for (int y=map.coordinates[0].y; y<=map.coordinates[1].y; y++){
         for (int x=map.coordinates[0].x; x<=map.coordinates[1].x; x++){
             Coordinates c{x,y};
@@ -50,20 +51,6 @@ int main(int argc, char **argv) {
                             cout << ms.clear;
                         }
                     }
-                }
-            }
-        }
-        cout << '\t';
-        for (int x=map.coordinates[0].x; x<=map.coordinates[1].x; x++){
-            Coordinates c{x,y};
-            if (map.find(c)==Not_found) {
-                cout << '-';
-            } else {
-                const Cell &cell = map[c];
-                if (cell.occluded) {
-                    cout << "O" ;
-                } else {
-                    cout << graph[cell].size();
                 }
             }
         }
