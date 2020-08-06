@@ -65,20 +65,6 @@ int main(int argc, char **argv) {
                 }
             }
         }
-        cout << '\t';
-        for (int x=map.coordinates[0].x; x<=map.coordinates[1].x; x++){
-            Coordinates c{x,y};
-            if (map.find(c)==Not_found) {
-                cout << '-';
-            } else {
-                const Cell &cell = map[c];
-                if (cell.occluded) {
-                    cout << "O" ;
-                } else {
-                    cout << graph[cell].size();
-                }
-            }
-        }
         cout << endl;
     }
     return 0;
