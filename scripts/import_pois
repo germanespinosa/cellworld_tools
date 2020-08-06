@@ -3,8 +3,6 @@ FILES="$CELLWORLD_LEGACY/$1*.world"
 
 folder="$CELLWORLD_DATA/cell_group"
 
-rm "$folder" -r 2> /dev/null
-
 mkdir "$folder" -p
 
 for file in $FILES

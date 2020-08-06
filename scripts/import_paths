@@ -1,7 +1,7 @@
 #!/bin/bash
 FILES="$CELLWORLD_LEGACY/$1*.world"
 
-folder="$CELLWORLD_DATA/path"
+folder="$CELLWORLD_DATA/paths"
 
 rm "$folder" -r 2> /dev/null
 
@@ -14,13 +14,13 @@ do
   world=$(cw_get_item world $world_name)
 
   path_type="euclidean"
-  cellworld_create_paths -world "$world_name" -path_type "$path_type" | cw_save_item path "$world_name" "$path_type"
+  cellworld_create_paths -world "$world_name" -path_type "$path_type" | cw_save_item paths "$world_name" "$path_type"
 
   path_type="manhattan"
-  cellworld_create_paths -world "$world_name" -path_type "$path_type" | cw_save_item path "$world_name" "$path_type"
+  cellworld_create_paths -world "$world_name" -path_type "$path_type" | cw_save_item paths "$world_name" "$path_type"
 
   path_type="astar"
-  cellworld_create_paths -world "$world_name" -path_type "$path_type" | cw_save_item path "$world_name" "$path_type"
+  cellworld_create_paths -world "$world_name" -path_type "$path_type" | cw_save_item paths "$world_name" "$path_type"
 done
 
 cd "$folder"

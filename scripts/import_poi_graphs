@@ -1,0 +1,25 @@
+#!/bin/bash
+FILES="$CELLWORLD_LEGACY/$1*.world"
+
+folder="$CELLWORLD_DATA/graph"
+
+mkdir "$folder" -p
+for file in $FILES
+do
+  world_name=$(basename -s ".world" $file)
+  echo "$world_name"
+
+  path_type="euclidean"
+  cellworld_create_poi_graph -world "$world_name" -path_type "$path_type" | cw_save_item "graph" "$world_name" "pois" "$path_type"
+
+  path_type="manhattan"
+  cellworld_create_poi_graph -world "$world_name" -path_type "$path_type" | cw_save_item "graph" "$world_name" "pois" "$path_type"
+
+  path_type="astar"
+  cellworld_create_poi_graph -world "$world_name" -path_type "$path_type" | cw_save_item "graph" "$world_name" "pois" "$path_type"
+done
+
+cd "$folder"
+git add --all
+git commit --all --message "worlds updated"
+git push
