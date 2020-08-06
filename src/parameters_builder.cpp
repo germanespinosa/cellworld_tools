@@ -6,7 +6,7 @@ namespace cell_world_tools {
         if (cin.gcount()) {
             try {
                 cin >> *this;
-            } catch (exception ) {
+            } catch (exception &) {
                 cerr << "error parsing pipe content" << endl;
                 _show_help();
                 exit(EXIT_FAILURE);
@@ -23,14 +23,14 @@ namespace cell_world_tools {
                 string name = jb.members[i].name;
                 string value = cmd_parameters[name];
                 //cout << "parsing parameter '" << name << "' with value '" << value << "'" << endl;
+                auto &a = *(jb.members[i].ref);
                 if (_parameters_resources[i].empty()) {
-                    auto &a = *(jb.members[i].ref);
                     if (_requires_quotes[i]) {
                         value = '"' + value + '"';
                     }
                     try {
-                        value >> *(jb.members[i].ref);
-                    } catch (exception ){
+                        value >> a;
+                    } catch (exception &){
                         cerr << "error parsing parameter '" << name << "' with value '" << value << "'" << endl;
                         _show_help();
                         exit(EXIT_FAILURE);
@@ -39,8 +39,8 @@ namespace cell_world_tools {
                     auto wr = Web_resource::from(_parameters_resources[i]);
                     for (auto &k: _parameters_keys[i]) wr.key(cmd_parameters[k]);
                     try {
-                        jb.members[i].ref->json_parse(wr.get());
-                    } catch (exception ){
+                        a.json_parse(wr.get());
+                    } catch (exception &){
                         cerr << "error parsing parameter '" << name << "' from url '" << wr.url() << "'" << endl;
                         _show_help();
                         exit(EXIT_FAILURE);
