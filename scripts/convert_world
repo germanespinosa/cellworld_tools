@@ -1,0 +1,39 @@
+#!/usr/bin/python3
+import sys
+import json
+
+
+def create_location(x, y):
+    return {"x": x, "y": y}
+
+
+def create_coordinates(x, y):
+    return {"x": x, "y": y}
+
+
+def create_cell(cell_id, cell_type, coordinates, location,  occluded):
+    return {"id": cell_id, "cell_type": cell_type, "coordinates": coordinates, "location": location, "occluded": occluded}
+
+
+world = {"name": sys.argv[1], "connection_pattern": [], "cells": []}
+
+connection_pattern_raw = sys.stdin.readline().replace('\n', '').strip().split(" ")
+for i in range(0, len(connection_pattern_raw), 2):
+    cpx = int(connection_pattern_raw[i])
+    cpy = int(connection_pattern_raw[i+1])
+    world["connection_pattern"] += [create_coordinates(cpx, cpy)]
+
+cell_id = 0
+for line in sys.stdin:
+    cell_raw = line.split(" ")
+    ccell_type = int(cell_raw[0])
+    ccoord_x = int(cell_raw[1])
+    ccoord_y = int(cell_raw[2])
+    cloc_x = float(cell_raw[3])
+    cloc_y = float(cell_raw[4])
+    cocc = int(cell_raw[6])
+    world["cells"] += [create_cell(cell_id,ccell_type,create_coordinates(ccoord_x,ccoord_y),create_location(cloc_x,cloc_y),cocc)]
+    cell_id += 1
+
+print(json.dumps(world))
+

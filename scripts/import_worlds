@@ -1,0 +1,20 @@
+#!/bin/bash
+FILES="$CELLWORLD_LEGACY/$1*.world"
+
+world_folder="$CELLWORLD_DATA/world"
+
+rm "$world_folder" -r 2> /dev/null
+
+mkdir "$world_folder" -p
+
+for file in $FILES
+do
+  name=$(basename -s ".world" $file)
+  echo "$name"
+  cat $file | cw_convert_world "$name" | cw_save_item world "$name"
+done
+
+cd "$world_folder"
+git add --all
+git commit --all --message "worlds updated"
+git push

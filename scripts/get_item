@@ -1,0 +1,7 @@
+#!/bin/bash
+folder="$CELLWORLD_DATA/$1"
+shift
+old="$IFS"
+IFS='.'
+filename="$*"
+cat "$folder/$filename"

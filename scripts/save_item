@@ -1,0 +1,12 @@
+#!/bin/bash
+table="$1"
+folder="$CELLWORLD_DATA/$table"
+if [[ ! -d "$folder" ]]
+then
+    mkdir "$folder"
+fi
+shift
+old="$IFS"
+IFS='.'
+filename="$*"
+tee > "$folder/$filename"
