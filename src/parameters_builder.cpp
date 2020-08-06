@@ -25,7 +25,7 @@ namespace cell_world_tools {
                 //cout << "parsing parameter '" << name << "' with value '" << value << "'" << endl;
                 if (_parameters_resources[i].empty()) {
                     auto &a = *(jb.members[i].ref);
-                    if (a.require_quotes) {
+                    if (_requires_quotes[i]) {
                         value = '"' + value + '"';
                     }
                     try {
@@ -52,14 +52,17 @@ namespace cell_world_tools {
     }
 
     void
-    Parameters_builder::_add_param(const string &param_name, const string &resource_name, const vector<string> &keys) {
+    Parameters_builder::_add_param(const string &param_name, bool require_quotes, const string &resource_name, const
+    vector<string> &keys) {
         _parameters_names.emplace_back(param_name);
+        _requires_quotes.push_back(require_quotes);
         _parameters_resources.push_back(resource_name);
         _parameters_keys.push_back(keys);
     }
 
-    void Parameters_builder::_add_param(const string &param_name) {
+    void Parameters_builder::_add_param(const string &param_name, bool require_quotes) {
         _parameters_names.emplace_back(param_name);
+        _requires_quotes.push_back(require_quotes);
         _parameters_resources.emplace_back("");
         _parameters_keys.emplace_back();
     }
