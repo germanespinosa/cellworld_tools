@@ -1,0 +1,29 @@
+#!/bin/bash
+FILES="$CELLWORLD_LEGACY/$1*.world"
+
+folder="$CELLWORLD_DATA/path"
+
+rm "$folder" -r 2> /dev/null
+
+mkdir "$folder" -p
+
+for file in $FILES
+do
+  world_name=$(basename -s ".world" $file)
+  echo "$world_name"
+  world=$(cw_get_item world $world_name)
+
+  path_type="euclidean"
+  cellworld_create_paths -world "$world_name" -path_type "$path_type" | cw_save_item path "$world_name" "$path_type"
+
+  path_type="manhattan"
+  cellworld_create_paths -world "$world_name" -path_type "$path_type" | cw_save_item path "$world_name" "$path_type"
+
+  path_type="astar"
+  cellworld_create_paths -world "$world_name" -path_type "$path_type" | cw_save_item path "$world_name" "$path_type"
+done
+
+cd "$folder"
+git add --all
+git commit --all --message "worlds updated"
+git push

@@ -21,8 +21,8 @@ TEST_CASE("get_world"){
     CHECK_NOTHROW(Json_create<World>(Web_resource::from("world").key("world_0_0").get()));
 }
 
-TEST_CASE("get_paths"){
-    CHECK_NOTHROW(Json_create<Path_builder> (Web_resource::from("paths").key("world_0_0").key("astar").get()));
+TEST_CASE("get_cell_group"){
+    CHECK_NOTHROW(Json_create<Cell_group>(Web_resource::from("world").key("world_0_0").key("pois").get()));
 }
 
 TEST_CASE("CACHE FOLDER"){
