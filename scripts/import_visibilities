@@ -1,0 +1,18 @@
+#!/bin/bash
+FILES="$CELLWORLD_LEGACY/$1*.world"
+
+folder="$CELLWORLD_DATA/graph"
+
+mkdir "$folder" -p
+
+for file in $FILES
+do
+  world_name=$(basename -s ".world" $file)
+  echo "$world_name"
+  cellworld_create_visibility -world "$world_name" | cw_save_item graph "$world_name" "visibility"
+done
+
+cd "$folder"
+git add --all
+git commit --all --message "worlds updated"
+git push

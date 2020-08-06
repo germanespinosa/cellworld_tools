@@ -4,6 +4,7 @@ FILES="$CELLWORLD_LEGACY/$1*.world"
 folder="$CELLWORLD_DATA/graph"
 
 mkdir "$folder" -p
+
 for file in $FILES
 do
   world_name=$(basename -s ".world" $file)
