@@ -88,36 +88,40 @@ find_package(CatchTests CONFIG QUIET)
 ### LIBRARY INSTALLATION
 ###
 
-include(GNUInstallDirs)
+if (CMAKE_BUILD_TYPE MATCHES Release)
 
-install(TARGETS cellworld_tools EXPORT Cellworld_toolsConfig
-        ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
-        LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
-        RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
+    include(GNUInstallDirs)
 
-install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+    install(TARGETS cellworld_tools EXPORT Cellworld_toolsConfig
+            ARCHIVE  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+            LIBRARY  DESTINATION ${CMAKE_INSTALL_LIBDIR}
+            RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
 
-install(EXPORT Cellworld_toolsConfig
-        DESTINATION ${CMAKE_INSTALL_DATADIR}/cmake/Cellworld_tools
-        EXPORT_LINK_INTERFACE_LIBRARIES)
+    install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
-export(TARGETS cellworld_tools FILE Cellworld_toolsConfig.cmake)
-install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Cellworld_tools/Cellworld_toolsConfig.cmake \"find_package(Cellworld REQUIRED)\n\") ")
-install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Cellworld_tools/Cellworld_toolsConfig.cmake \"set(CELLWORLD_TOOLS_LIBRARIES cellworld_tools ${CELLWORLD_LIBRARIES})\n\") ")
-###
-### UTILITIES INSTALLATION
-###
+    install(EXPORT Cellworld_toolsConfig
+            DESTINATION ${CMAKE_INSTALL_DATADIR}/cmake/Cellworld_tools
+            EXPORT_LINK_INTERFACE_LIBRARIES)
 
-include(GNUInstallDirs)
+    export(TARGETS cellworld_tools FILE Cellworld_toolsConfig.cmake)
+    install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Cellworld_tools/Cellworld_toolsConfig.cmake \"find_package(Cellworld REQUIRED)\n\") ")
+    install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Cellworld_tools/Cellworld_toolsConfig.cmake \"set(CELLWORLD_TOOLS_LIBRARIES cellworld_tools ${CELLWORLD_LIBRARIES})\n\") ")
+    ###
+    ### UTILITIES INSTALLATION
+    ###
 
-install(TARGETS cellworld_show_cell_group
-                cellworld_show_graph
-                cellworld_show_world
-                cellworld_find_pois
-                cellworld_create_paths
-                cellworld_show_paths
-                cellworld_create_visibility
-                cellworld_create_poi_graph
-        RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
+    include(GNUInstallDirs)
 
-find_package( Cellworld CONFIG QUIET )
+    install(TARGETS cellworld_show_cell_group
+                    cellworld_show_graph
+                    cellworld_show_world
+                    cellworld_find_pois
+                    cellworld_create_paths
+                    cellworld_show_paths
+                    cellworld_create_visibility
+                    cellworld_create_poi_graph
+            RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
+
+    find_package( Cellworld CONFIG QUIET )
+
+endif()
