@@ -112,8 +112,6 @@ if (CMAKE_BUILD_TYPE MATCHES Release)
     ### SCRIPT TOOLS INSTALLATION
     ###
 
-    message("here ${CMAKE_INSTALL_BINDIR}")
-
     install(DIRECTORY scripts/tools/ DESTINATION ${CMAKE_INSTALL_BINDIR})
 #    install(CODE "execute_process(COMMAND chmod +777 ${CMAKE_INSTALL_BINDIR}/worker)")
 #    install(CODE "execute_process(COMMAND chmod +777 ${CMAKE_INSTALL_BINDIR}/params)")
