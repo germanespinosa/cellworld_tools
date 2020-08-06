@@ -62,7 +62,7 @@ namespace cell_world_tools {
     }
 
     std::string &Web_resource::cache_folder() {
-        static string folder(std::getenv("CELLWORLD_CACHE"));
+        static string folder(std::getenv("CELLWORLD_CACHE")?std::getenv("CELLWORLD_CACHE"):".");
         return folder;
     }
 }

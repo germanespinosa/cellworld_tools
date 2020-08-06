@@ -25,6 +25,10 @@ TEST_CASE("get_cell_group"){
     CHECK_NOTHROW(Json_create<Cell_group>(Web_resource::from("world").key("world_0_0").key("pois").get()));
 }
 
+TEST_CASE("path_builder"){
+    CHECK_NOTHROW(Json_create<Path_builder>(Web_resource::from("path").key("world_0_0").key("astar").get()));
+}
+
 TEST_CASE("CACHE FOLDER"){
-    cout << Web_resource::cache_folder() << endl;
+    CHECK(!Web_resource::cache_folder().empty());
 }
