@@ -106,6 +106,21 @@ if (CMAKE_BUILD_TYPE MATCHES Release)
     export(TARGETS cellworld_tools FILE Cellworld_toolsConfig.cmake)
     install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Cellworld_tools/Cellworld_toolsConfig.cmake \"find_package(Cellworld REQUIRED)\n\") ")
     install(CODE "FILE(APPEND ${CMAKE_INSTALL_FULL_DATADIR}/cmake/Cellworld_tools/Cellworld_toolsConfig.cmake \"set(CELLWORLD_TOOLS_LIBRARIES cellworld_tools ${CELLWORLD_LIBRARIES})\n\") ")
+
+
+    ###
+    ### SCRIPT TOOLS INSTALLATION
+    ###
+
+    message("here ${CMAKE_INSTALL_BINDIR}")
+
+    install(DIRECTORY scripts/tools/ DESTINATION ${CMAKE_INSTALL_BINDIR})
+#    install(CODE "execute_process(COMMAND chmod +777 ${CMAKE_INSTALL_BINDIR}/worker)")
+#    install(CODE "execute_process(COMMAND chmod +777 ${CMAKE_INSTALL_BINDIR}/params)")
+#    install(CODE "execute_process(COMMAND chmod +777 ${CMAKE_INSTALL_BINDIR}/gauge)")
+#    install(CODE "execute_process(COMMAND chmod +777 ${CMAKE_INSTALL_BINDIR}/json)")
+#    install(CODE "execute_process(COMMAND chmod +777 ${CMAKE_INSTALL_BINDIR}/unique)")
+
     ###
     ### UTILITIES INSTALLATION
     ###
