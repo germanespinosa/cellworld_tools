@@ -1,0 +1,20 @@
+#!/bin/bash
+FILES="$CELLWORLD_LEGACY/$1*.world"
+
+folder="$CELLWORLD_DATA/cell_group"
+
+rm "$folder" -r 2> /dev/null
+
+mkdir "$folder" -p
+
+for file in $FILES
+do
+  world_name=$(basename -s ".world" $file)
+  echo "$world_name"
+  cellworld_find_pois -world $world_name -extra_pois '[{"x":0,"y":7},{"x":0,"y":-7}]' | cw_save_item cell_group "$world_name" "pois"
+done
+
+cd "$folder"
+git add --all
+git commit --all --message "worlds updated"
+git push

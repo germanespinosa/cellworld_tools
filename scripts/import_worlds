@@ -1,11 +1,11 @@
 #!/bin/bash
 FILES="$CELLWORLD_LEGACY/$1*.world"
 
-world_folder="$CELLWORLD_DATA/world"
+folder="$CELLWORLD_DATA/world"
 
-rm "$world_folder" -r 2> /dev/null
+rm "$folder" -r 2> /dev/null
 
-mkdir "$world_folder" -p
+mkdir "$folder" -p
 
 for file in $FILES
 do
@@ -14,7 +14,7 @@ do
   cat $file | cw_convert_world "$name" | cw_save_item world "$name"
 done
 
-cd "$world_folder"
+cd "$folder"
 git add --all
 git commit --all --message "worlds updated"
 git push
