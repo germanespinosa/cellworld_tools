@@ -16,16 +16,10 @@
 #define Parameters_definitions(PARAMETERS) Json_object_members(PARAMETERS)
 
 namespace cell_world_tools {
-    struct Parameters_loader {
+    struct Parameters_loader : json_cpp::Json_dictionary {
         Parameters_loader() = default;
         Parameters_loader(int argc, char **argv);
-        const std::string &operator[](const std::string &);
-        bool contains(const std::string &) const;
-        bool empty() const;
         std::string program_name;
-    private:
-        std::vector<std::string> _parameters_names;
-        std::vector<std::string> _parameters_value;
     };
 
     struct Parameters_builder : json_cpp::Json_object {

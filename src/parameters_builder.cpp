@@ -3,48 +3,38 @@
 using namespace std;
 namespace cell_world_tools {
     bool Parameters_builder::load(int argc, char **argv) {
-        if (cin.gcount()) {
-            try {
-                cin >> *this;
-            } catch (exception &) {
-                cerr << "error parsing pipe content" << endl;
-                _show_help();
-                exit(EXIT_FAILURE);
-            }
-        } else {
-            cmd_parameters = Parameters_loader(argc, argv);
-            json_cpp::Json_builder jb;
-            json_set_builder(jb);
-            if (_check_parameters()) {
-                _show_help();
-                exit(EXIT_FAILURE);
-            }
-            for (unsigned int i = 0; i < jb.members.size(); i++) {
-                string name = jb.members[i].name;
-                string value = cmd_parameters[name];
-                //cout << "parsing parameter '" << name << "' with value '" << value << "'" << endl;
-                auto &a = *(jb.members[i].ref);
-                if (_parameters_resources[i].empty()) {
-                    if (_requires_quotes[i]) {
-                        value = '"' + value + '"';
-                    }
-                    try {
-                        value >> a;
-                    } catch (exception &){
-                        cerr << "error parsing parameter '" << name << "' with value '" << value << "'" << endl;
-                        _show_help();
-                        exit(EXIT_FAILURE);
-                    }
-                } else {
-                    auto wr = Web_resource::from(_parameters_resources[i]);
-                    for (auto &k: _parameters_keys[i]) wr.key(cmd_parameters[k]);
-                    try {
-                        a.json_parse(wr.get());
-                    } catch (exception &){
-                        cerr << "error parsing parameter '" << name << "' from url '" << wr.url() << "'" << endl;
-                        _show_help();
-                        exit(EXIT_FAILURE);
-                    }
+        cmd_parameters = Parameters_loader(argc, argv);
+        json_cpp::Json_builder jb;
+        json_set_builder(jb);
+        if (_check_parameters()) {
+            _show_help();
+            exit(EXIT_FAILURE);
+        }
+        for (unsigned int i = 0; i < jb.members.size(); i++) {
+            string name = jb.members[i].name;
+            string value = cmd_parameters[name].value;
+            //cout << "parsing parameter '" << name << "' with value '" << value << "'" << endl;
+            auto &a = *(jb.members[i].ref);
+            if (_parameters_resources[i].empty()) {
+                if (_requires_quotes[i]) {
+                    value = '"' + value + '"';
+                }
+                try {
+                    value >> a;
+                } catch (exception &){
+                    cerr << "error parsing parameter '" << name << "' with value '" << value << "'" << endl;
+                    _show_help();
+                    exit(EXIT_FAILURE);
+                }
+            } else {
+                auto wr = Web_resource::from(_parameters_resources[i]);
+                for (auto &k: _parameters_keys[i]) wr.key(cmd_parameters[k].value);
+                try {
+                    a.json_parse(wr.get());
+                } catch (exception &){
+                    cerr << "error parsing parameter '" << name << "' from url '" << wr.url() << "'" << endl;
+                    _show_help();
+                    exit(EXIT_FAILURE);
                 }
             }
         }
@@ -80,7 +70,7 @@ namespace cell_world_tools {
     }
 
     bool Parameters_builder::_check_parameters() {
-        if (cmd_parameters.empty()) return true;
+        if (cmd_parameters.size() == 0) return true;
         bool fail = false;
         for (auto &m:_parameters_names) {
             if (!cmd_parameters.contains(m)) {
@@ -91,33 +81,21 @@ namespace cell_world_tools {
         return fail;
     }
 
-    const string &Parameters_loader::operator[](const string &name) {
-        for (unsigned int i = 0; i < _parameters_names.size(); i++) {
-            if (_parameters_names[i] == name) return _parameters_value[i];
-        }
-        throw logic_error("parameter '" + name + "' not specified");
-    }
-
     Parameters_loader::Parameters_loader(int argc, char **argv) {
         program_name = argv[0];
+        if (cin.good() && !cin.eof()){
+            cin >> *this;
+        }
         for (int i = 1; i < argc - 1; i++) {
             string name(argv[i]);
             if (name[0] == '-') {
                 name.erase(0, 1);
-                _parameters_names.push_back(name);
-                _parameters_value.emplace_back(argv[i + 1]);
+                keys.push_back(name);
+                Item new_item;
+                new_item.value = argv[i + 1];
+                new_item.require_quotes = true;
+                items.push_back(new_item);
             }
         }
-    }
-
-    bool Parameters_loader::contains(const string &name) const {
-        for (unsigned int i = 0; i < _parameters_names.size(); i++) {
-            if (_parameters_names[i] == name) return true;
-        }
-        return false;
-    }
-
-    bool Parameters_loader::empty() const {
-        return _parameters_names.empty();
     }
 }

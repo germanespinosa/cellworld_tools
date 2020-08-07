@@ -3,8 +3,8 @@
 #include <cell_world_tools.h>
 
 using namespace std;
-using namespace cell_world;
 using namespace json_cpp;
+using namespace cell_world;
 using namespace cell_world_tools;
 
 TEST_CASE("key tests"){
