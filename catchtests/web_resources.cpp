@@ -5,7 +5,6 @@
 using namespace std;
 using namespace json_cpp;
 using namespace cell_world;
-using namespace cell_world_tools;
 
 TEST_CASE("key tests"){
     auto wr = Web_resource::from("cell_group");
@@ -26,7 +25,7 @@ TEST_CASE("get_cell_group"){
 }
 
 TEST_CASE("path_builder"){
-    CHECK_NOTHROW(Json_create<Path_builder>(Web_resource::from("path").key("world_0_0").key("astar").get()));
+    CHECK_NOTHROW(Json_create<Path_builder>(Web_resource::from("paths").key("world_0_0").key("astar").get()));
 }
 
 TEST_CASE("CACHE FOLDER"){

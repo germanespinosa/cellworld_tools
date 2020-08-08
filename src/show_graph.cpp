@@ -5,7 +5,6 @@
 
 using namespace cell_world;
 using namespace std;
-using namespace cell_world_tools;
 
 Map_symbols ms;
 

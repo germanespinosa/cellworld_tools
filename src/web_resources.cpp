@@ -3,7 +3,8 @@
 #include <json_cpp.h>
 
 using namespace std;
-namespace cell_world_tools {
+
+namespace cell_world {
     Web_resource Web_resource::from(const string resource) {
         Web_resource wr;
         wr._resource = resource;

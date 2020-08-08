@@ -1,7 +1,7 @@
 #include <cell_world_tools/parameters_builder.h>
 
 using namespace std;
-namespace cell_world_tools {
+namespace cell_world {
     bool Parameters_builder::load(int argc, char **argv) {
         cmd_parameters = Parameters_loader(argc, argv);
         json_cpp::Json_builder jb;

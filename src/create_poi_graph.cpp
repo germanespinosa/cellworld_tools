@@ -4,7 +4,6 @@
 
 using namespace cell_world;
 using namespace std;
-using namespace cell_world_tools;
 using namespace json_cpp;
 
 struct Parameters : Parameters_builder{

@@ -1,6 +1,6 @@
 #pragma once
 #include <json_cpp.h>
-namespace cell_world_tools {
+namespace cell_world {
     struct Map_symbols : json_cpp::Json_object {
         std::string clear = "\033[7m\u2000\033[0m";
         std::string occluded = "\033[7m\u2588\033[0m";

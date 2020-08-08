@@ -15,7 +15,7 @@
 
 #define Parameters_definitions(PARAMETERS) Json_object_members(PARAMETERS)
 
-namespace cell_world_tools {
+namespace cell_world {
     struct Parameters_loader : json_cpp::Json_dictionary {
         Parameters_loader() = default;
         Parameters_loader(int argc, char **argv);

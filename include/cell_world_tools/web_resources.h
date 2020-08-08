@@ -4,7 +4,7 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-namespace cell_world_tools {
+namespace cell_world {
     struct Web_resource {
         static std::string &cache_folder();
         static Web_resource from(const std::string);

@@ -2,7 +2,7 @@
 #include <cell_world_tools/map_symbols.h>
 
 using namespace std;
-using namespace cell_world_tools;
+using namespace cell_world;
 
 int main(){
     Map_symbols ms;
