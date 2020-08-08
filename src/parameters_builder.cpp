@@ -83,8 +83,12 @@ namespace cell_world {
 
     Parameters_loader::Parameters_loader(int argc, char **argv) {
         program_name = argv[0];
-        if (cin.good() && !cin.eof()){
-            cin >> *this;
+        for (int i = 1; i < argc; i++) {
+            if (argv[i]==string("-stdin")) {
+                if (cin.good() && cin.gcount()){
+                    cin >> *this;
+                }
+            }
         }
         for (int i = 1; i < argc - 1; i++) {
             string name(argv[i]);
