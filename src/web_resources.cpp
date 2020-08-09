@@ -1,6 +1,7 @@
 #include <cell_world_tools/web_resources.h>
 #include <string>
 #include <json_cpp.h>
+#include <chrono>
 
 using namespace std;
 
@@ -28,6 +29,13 @@ namespace cell_world {
         return key(string(k));
     }
 
+    string _cache_invalidation(){
+        stringstream ss;
+        using namespace std::chrono;
+        ss << "?r=" << duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
+        return ss.str();
+    }
+
     std::istream &Web_resource::get() {
         string cfn = cache_folder() + "/" + _resource + "." + _file_name();
         ifstream cache(cfn);
@@ -38,7 +46,7 @@ namespace cell_world {
         { // time to download the resource
             ofstream cache_file;
             cache_file.open(cfn);
-            auto wr = Json_web_get(url());
+            auto wr = Json_web_get(url() + _cache_invalidation ());
             cache_file << wr.get_string();
             cache_file.close();
         }
