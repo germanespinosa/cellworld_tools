@@ -1,5 +1,8 @@
 #pragma once
+#include <cell_world.h>
 #include <json_cpp.h>
+
+
 namespace cell_world {
     struct Map_symbols : json_cpp::Json_object {
         std::string clear = "\033[7m\u2000\033[0m";
@@ -29,5 +32,7 @@ namespace cell_world {
             Add_member(highlight);
             Add_member(goal);
         })
+
+        std::string get_direction(const cell_world::Move &);
     };
 }

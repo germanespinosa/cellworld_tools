@@ -23,7 +23,6 @@ int main(int argc, char **argv) {
     cout << "connection_pattern: " << p.world.connection_pattern << endl;
     cout << "cells: " << p.world.size() << endl;
     cout << "occlusions: " << p.world.create_cell_group().occluded_cells().size() << endl;
-    Graph graph = p.world.create_graph();
     Map map (p.world.create_cell_group());
     for (int y=map.coordinates[0].y; y<=map.coordinates[1].y; y++){
         for (int x=map.coordinates[0].x; x<=map.coordinates[1].x; x++){
@@ -36,20 +35,6 @@ int main(int argc, char **argv) {
                     cout << ms.occluded;
                 } else {
                     cout << ms.clear;
-                }
-            }
-        }
-        cout << '\t';
-        for (int x=map.coordinates[0].x; x<=map.coordinates[1].x; x++){
-            Coordinates c{x,y};
-            if (map.find(c)==Not_found) {
-                cout << '-';
-            } else {
-                const Cell &cell = map[c];
-                if (cell.occluded) {
-                    cout << " " ;
-                } else {
-                    cout << graph[cell].size();
                 }
             }
         }

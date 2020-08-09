@@ -19,23 +19,6 @@ struct Parameters : Parameters_builder{
     })
 };
 
-string get_arrow(Move c){
-    if (c.x > 0){
-        if (c.y == 0) return ms.E;
-        if (c.y < 0) return ms.NE;
-        if (c.y > 0) return ms.SE;
-    }
-    if (c.x < 0) {
-        if (c.y == 0) return ms.W;
-        if (c.y < 0) return ms.NW;
-        if (c.y > 0) return ms.SW;
-    }
-    if (c.y < 0) return ms.N;
-    if (c.y > 0) return ms.S;
-
-    return ms.highlight;
-}
-
 int main(int argc, char **argv) {
     Parameters p;
     p.load(argc, argv);
@@ -60,7 +43,7 @@ int main(int argc, char **argv) {
                 if (cell.occluded) {
                     cout << ms.occluded ;
                 } else {
-                    cout << get_arrow(paths.get_move(cell,destination));
+                    cout << ms.get_direction(paths.get_move(cell,destination));
                 }
             }
         }

@@ -15,7 +15,8 @@ find_package(Cellworld REQUIRED)
 
 set(cellworld_tools_files
         src/parameters_builder.cpp
-        src/web_resources.cpp)
+        src/web_resources.cpp
+        src/map_symbols.cpp)
 
 add_library(cellworld_tools ${cellworld_tools_files})
 
@@ -76,9 +77,6 @@ target_link_libraries( cellworld_create_visibility PUBLIC cellworld_tools )
 add_executable(cellworld_show_paths src/show_paths.cpp)
 target_link_libraries( cellworld_show_paths PUBLIC cellworld_tools )
 
-add_executable(cellworld_map_symbols src/map_symbols.cpp)
-target_link_libraries( cellworld_map_symbols PUBLIC cellworld_tools )
-
 ###
 ### TESTS
 ###
@@ -113,11 +111,6 @@ if (CMAKE_BUILD_TYPE MATCHES Release)
     ###
 
     install(DIRECTORY scripts/tools/ DESTINATION ${CMAKE_INSTALL_BINDIR})
-#    install(CODE "execute_process(COMMAND chmod +777 ${CMAKE_INSTALL_BINDIR}/worker)")
-#    install(CODE "execute_process(COMMAND chmod +777 ${CMAKE_INSTALL_BINDIR}/params)")
-#    install(CODE "execute_process(COMMAND chmod +777 ${CMAKE_INSTALL_BINDIR}/gauge)")
-#    install(CODE "execute_process(COMMAND chmod +777 ${CMAKE_INSTALL_BINDIR}/json)")
-#    install(CODE "execute_process(COMMAND chmod +777 ${CMAKE_INSTALL_BINDIR}/unique)")
 
     ###
     ### UTILITIES INSTALLATION
