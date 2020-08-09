@@ -46,7 +46,7 @@ namespace cell_world {
         { // time to download the resource
             ofstream cache_file;
             cache_file.open(cfn);
-            auto wr = Json_web_get(url());
+            auto wr = Json_web_get(url() + _cache_invalidation());
             cache_file << wr.get_string();
             cache_file.close();
         }
@@ -56,7 +56,7 @@ namespace cell_world {
     std::string Web_resource::url() {
         string url = "https://raw.githubusercontent.com/germanespinosa/cellworld_data/master/" + _resource + "/" +
                      _file_name();
-        return url + _cache_invalidation ();
+        return url;
     }
 
     std::string Web_resource::_file_name() {
