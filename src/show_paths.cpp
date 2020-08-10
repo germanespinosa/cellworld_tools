@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cell_world.h>
-#include <cell_world_tools/map_symbols.h>
-#include <cell_world_tools/parameters_builder.h>
+#include <cell_world_tools.h>
 
 using namespace cell_world;
 using namespace std;
@@ -32,22 +31,12 @@ int main(int argc, char **argv) {
     cout << "size: " << paths.moves.size() << endl;
     Graph graph = p.world.create_graph();
     Map map (p.world.create_cell_group());
+    Screen_map sm(map);
     const Cell &destination = map[p.destination];
-    for (int y=map.coordinates[0].y; y<=map.coordinates[1].y; y++){
-        for (int x=map.coordinates[0].x; x<=map.coordinates[1].x; x++){
-            Coordinates c{x,y};
-            if (map.find(c)==Not_found) {
-                cout << '-';
-            } else {
-                const Cell &cell = map[c];
-                if (cell.occluded) {
-                    cout << ms.occluded ;
-                } else {
-                    cout << ms.get_direction(paths.get_move(cell,destination));
-                }
-            }
-        }
-        cout << endl;
+    for (const Cell &cell:map.cells.free_cells()) {
+        sm.add_special_cell(cell, ms.get_direction(paths.get_move(cell,destination)));
     }
+    sm.add_special_cell(destination,ms.goal.front(Red));
+    cout << sm;
     return 0;
 }

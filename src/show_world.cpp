@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cell_world.h>
-#include <cell_world_tools/map_symbols.h>
-#include <cell_world_tools/parameters_builder.h>
+#include <cell_world_tools.h>
 
 using namespace cell_world;
 using namespace std;
@@ -24,21 +23,7 @@ int main(int argc, char **argv) {
     cout << "cells: " << p.world.size() << endl;
     cout << "occlusions: " << p.world.create_cell_group().occluded_cells().size() << endl;
     Map map (p.world.create_cell_group());
-    for (int y=map.coordinates[0].y; y<=map.coordinates[1].y; y++){
-        for (int x=map.coordinates[0].x; x<=map.coordinates[1].x; x++){
-            Coordinates c{x,y};
-            if (map.find(c)==Not_found) {
-                cout << '-';
-            } else {
-                const Cell &cell = map[c];
-                if (cell.occluded) {
-                    cout << ms.occluded;
-                } else {
-                    cout << ms.clear;
-                }
-            }
-        }
-        cout << endl;
-    }
+    Screen_map sm(map);
+    cout << sm;
     return 0;
 }

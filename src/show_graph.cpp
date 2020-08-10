@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cell_world.h>
-#include <cell_world_tools/map_symbols.h>
-#include <cell_world_tools/parameters_builder.h>
+#include <cell_world_tools.h>
 
 using namespace cell_world;
 using namespace std;
@@ -31,29 +30,9 @@ int main(int argc, char **argv) {
     Map map (p.world.create_cell_group());
     const Cell &source = map[p.source];
     cout << "source connections: " << graph[source].size() << endl;
-    for (int y=map.coordinates[0].y; y<=map.coordinates[1].y; y++){
-        for (int x=map.coordinates[0].x; x<=map.coordinates[1].x; x++){
-            Coordinates c{x,y};
-            if (map.find(c)==Not_found) {
-                cout << '-';
-            } else {
-                const Cell &cell = map[c];
-                if (cell.occluded) {
-                    cout << ms.occluded ;
-                } else {
-                    if (cell.coordinates == p.source){
-                        cout << ms.goal;
-                    } else {
-                        if (graph[source].contains(cell)){
-                            cout << ms.highlight;
-                        } else {
-                            cout << ms.clear;
-                        }
-                    }
-                }
-            }
-        }
-        cout << endl;
-    }
+    Screen_map sm (map);
+    sm.add_group(graph[source],ms.highlight.front(Red));
+    sm.add_special_cell(source, ms.goal.front(Blue));
+    cout << sm;
     return 0;
 }
