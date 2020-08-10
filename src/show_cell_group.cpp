@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
                     cout << ms.occluded ;
                 } else {
                     if (cg.contains(cell)) {
-                        cout << ms.highlight;
+                        cout << ms.highlight.front(Red);
                     } else {
                         cout << ms.clear;
                     }

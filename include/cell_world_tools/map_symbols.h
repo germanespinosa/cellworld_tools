@@ -4,19 +4,44 @@
 
 
 namespace cell_world {
+
+    enum Map_symbol_color{
+        Black = 30,
+        Red,
+        Green,
+        Yellow,
+        Blue,
+        Magenta,
+        Cyan,
+        White,
+    };
+
+    struct Map_symbol : json_cpp::Json_object {
+        Map_symbol() = default;
+        explicit Map_symbol (int);
+        Map_symbol (int, Map_symbol_color);
+        Map_symbol (int, Map_symbol_color, Map_symbol_color);
+        unsigned int symbol = 0;
+        unsigned int fg = 0;
+        unsigned int bg = 0;
+        friend std::ostream & operator << (std::ostream & , const Map_symbol &);
+        Map_symbol front(Map_symbol_color);
+        Map_symbol back(Map_symbol_color);
+    };
+
     struct Map_symbols : json_cpp::Json_object {
-        std::string clear = "\033[7m\u2000\033[0m";
-        std::string occluded = "\033[7m\u2588\033[0m";
-        std::string goal = "\033[7m\u25CE\033[0m";
-        std::string N = "\033[7m\u25B2\033[0m";
-        std::string W = "\033[7m\u25C0\033[0m";
-        std::string S = "\033[7m\u25BC\033[0m";
-        std::string E = "\033[7m\u25B6\033[0m";
-        std::string NE = "\033[7m\u25E5\033[0m";
-        std::string NW = "\033[7m\u25E4\033[0m";
-        std::string SE = "\033[7m\u25E2\033[0m";
-        std::string SW = "\033[7m\u25E3\033[0m";
-        std::string highlight = "\033[7m\u2592\033[0m";
+        Map_symbol clear{9608};
+        Map_symbol occluded{9617};
+        Map_symbol goal{9678};
+        Map_symbol N{9650};
+        Map_symbol W{9664};
+        Map_symbol S{9660};
+        Map_symbol E{9658};
+        Map_symbol NE{9701};
+        Map_symbol NW{9700};
+        Map_symbol SE{9698};
+        Map_symbol SW{9699};
+        Map_symbol highlight{9618};
 
         Json_object_members({
             Add_member(clear);
@@ -33,6 +58,6 @@ namespace cell_world {
             Add_member(goal);
         })
 
-        std::string get_direction(const cell_world::Move &);
+        Map_symbol get_direction(const cell_world::Move &);
     };
 }
