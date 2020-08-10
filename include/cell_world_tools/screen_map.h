@@ -1,3 +1,4 @@
+#pragma once
 #include <cell_world_tools/map_symbols.h>
 
 namespace cell_world {
