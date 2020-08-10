@@ -48,4 +48,8 @@ namespace cell_world{
     Screen_map::Screen_map(const Map &map, Map_symbols ms): map(map), ms(ms) {
 
     }
+
+    void Screen_map::add_special_cell(const Coordinates &coord, Map_symbol m) {
+        add_special_cell(map[coord],m);
+    }
 }

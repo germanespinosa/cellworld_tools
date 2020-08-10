@@ -30,7 +30,7 @@ namespace cell_world {
     };
 
     struct Map_symbols : json_cpp::Json_object {
-        Map_symbol clear{32, White};
+        Map_symbol clear{32, White, Black};
         Map_symbol occluded{32};
         Map_symbol goal{10026, White, Black};
         Map_symbol N{9650, White, Black};
@@ -42,16 +42,16 @@ namespace cell_world {
         Map_symbol SE{9698, White, Black};
         Map_symbol SW{9699, White, Black};
         Map_symbol highlight{9618};
-        Map_symbol one{10102, White, Black};
-        Map_symbol two{10103, White, Black};
-        Map_symbol three{10104, White, Black};
-        Map_symbol four{10105, White, Black};
-        Map_symbol five{10106, White, Black};
-        Map_symbol six{10107, White, Black};
-        Map_symbol seven{10108, White, Black};
-        Map_symbol eight{10109, White, Black};
-        Map_symbol nine{10110, White, Black};
-        Map_symbol ten{10111, White, Black};
+        Map_symbol zero{48, White, Black};
+        Map_symbol one{49, White, Black};
+        Map_symbol two{50, White, Black};
+        Map_symbol three{51, White, Black};
+        Map_symbol four{52, White, Black};
+        Map_symbol five{53, White, Black};
+        Map_symbol six{54, White, Black};
+        Map_symbol seven{55, White, Black};
+        Map_symbol eight{56, White, Black};
+        Map_symbol nine{57, White, Black};
 
         Json_object_members({
             Add_member(clear);
