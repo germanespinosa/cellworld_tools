@@ -30,7 +30,7 @@ namespace cell_world {
     };
 
     struct Map_symbols : json_cpp::Json_object {
-        Map_symbol clear{9609};
+        Map_symbol clear{32, White};
         Map_symbol occluded{32};
         Map_symbol goal{10026, White, Black};
         Map_symbol N{9650, White, Black};
