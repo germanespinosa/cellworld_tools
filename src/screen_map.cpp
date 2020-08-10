@@ -45,11 +45,15 @@ namespace cell_world{
         return o;
     }
 
-    Screen_map::Screen_map(const Map &map, Map_symbols ms): map(map), ms(ms) {
-
-    }
+    Screen_map::Screen_map(const Map &map, Map_symbols ms): map(map), ms(ms) { }
 
     void Screen_map::add_special_cell(const Coordinates &coord, Map_symbol m) {
         add_special_cell(map[coord],m);
+    }
+
+    void Screen_map::add_group(const Coordinates_list &l, Map_symbol m) {
+        Cell_group cg;
+        for (auto &c:l) cg.add(map[c]);
+        add_group(cg,m);
     }
 }
