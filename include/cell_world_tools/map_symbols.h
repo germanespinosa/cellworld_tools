@@ -6,6 +6,7 @@
 namespace cell_world {
 
     enum Map_symbol_color{
+        Default,
         Black = 30,
         Red,
         Green,
