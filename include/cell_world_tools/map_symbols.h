@@ -58,6 +58,6 @@ namespace cell_world {
             Add_member(goal);
         })
 
-        Map_symbol get_direction(const cell_world::Move &);
+        Map_symbol get_direction(const cell_world::Move &) const;
     };
 }

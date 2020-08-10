@@ -5,7 +5,7 @@
 using namespace std;
 namespace cell_world {
 
-    Map_symbol Map_symbols::get_direction(const Move &c) {
+    Map_symbol Map_symbols::get_direction(const Move &c) const {
         if (c.x > 0) {
             if (c.y == 0) return E;
             if (c.y < 0) return NE;
