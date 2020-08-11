@@ -129,6 +129,4 @@ if (CMAKE_BUILD_TYPE MATCHES Release)
                     cellworld_create_poi_graph
             RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
 
-    find_package( Cellworld CONFIG QUIET )
-
 endif()
