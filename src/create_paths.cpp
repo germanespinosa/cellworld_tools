@@ -19,11 +19,11 @@ int main(int argc, char **argv) {
     p.load(argc, argv);
     Graph graph = p.world.create_graph();
     if (p.path_type == "euclidean") {
-        cout << Paths::get_euclidean(graph).moves;
+        cout << Paths::get_euclidean(graph);
     } else if (p.path_type == "manhattan"){
-        cout << Paths::get_manhattan(graph).moves;
+        cout << Paths::get_manhattan(graph);
     } else if (p.path_type == "astar") {
-        cout << Paths::get_astar(graph).moves;
+        cout << Paths::get_astar(graph);
     } else {
         cout << "wrong path type '" << p.path_type << "'" << endl;
     }
