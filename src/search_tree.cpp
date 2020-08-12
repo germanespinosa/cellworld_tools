@@ -84,3 +84,7 @@ const Cell &Search_tree::get_best_option() {
 bool Search_tree::finished() {
     return _current->options_cells.empty();
 }
+
+const Cell &Search_tree::current_option() const {
+    return _current->cell;
+}

@@ -34,6 +34,8 @@ namespace cell_world {
         bool finished();
         const Cell &get_option();
 
+        const Cell &current_option() const;
+
         const cell_world::Graph &graph;
         const cell_world::Paths &paths;
         unsigned int remaining_steps;
