@@ -78,6 +78,7 @@ const Cell &Search_tree::get_best_option() {
     unsigned int max_i = 0;
     for (unsigned int i=1;i<root.options_reward.size();i++)
         if (root.options_reward[max_i]<root.options_reward[i]) max_i=i;
+    estimated_reward = root.options_reward[max_i];
     return root.options_cells[max_i];
 }
 

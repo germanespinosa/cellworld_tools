@@ -27,21 +27,18 @@ namespace cell_world {
                          unsigned int);
 
         void record_reward(double);
-
         const Cell &get_best_option();
-
         void rewind();
         bool finished();
         const Cell &get_option();
-
         const Cell &current_option() const;
-
         const cell_world::Graph &graph;
         const cell_world::Paths &paths;
         unsigned int remaining_steps;
         Search_tree_node root;
-
         Search_tree_node *_current;
+
+        double estimated_reward;
     private:
         void _load_current();
     };
