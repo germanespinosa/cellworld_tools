@@ -28,6 +28,10 @@ TEST_CASE("path_builder"){
     CHECK_NOTHROW(Json_create<Path_builder>(Web_resource::from("paths").key("world_0_0").key("astar").get()));
 }
 
+TEST_CASE("get_graph"){
+    CHECK_NOTHROW(Json_create<Graph_builder>(Web_resource::from("graph").key("world_0_0").key("pois").key("astar").get()));
+}
+
 TEST_CASE("CACHE FOLDER"){
     CHECK(!Web_resource::cache_folder().empty());
 }
