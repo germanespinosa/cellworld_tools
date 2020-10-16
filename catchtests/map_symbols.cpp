@@ -15,5 +15,5 @@ TEST_CASE("maps"){
 //    cout << "\033[3;" << 45 << ";" << 32 << "mTexting\033[0m\t\t" << "HERRE" << endl;
 //    cout << "\033[3;" << 46 << ";" << 31 << "mTexting\033[0m\t\t" << "HERRE" << endl;
 //    cout << "\033[3;" << 47 << ";" << 30 << "mTexting\033[0m\t\t" << "HERRE" << endl;
-    cout << "HERE " << m <<  m.back(Red).front(Yellow) << endl;
+//    cout << "HERE " << m <<  m.back(Red).front(Yellow) << endl;
 }
