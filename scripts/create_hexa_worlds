@@ -1,0 +1,12 @@
+#!/bin/bash
+for e in {00,01,02,03,04,05,06,07,08,09,10}
+do
+  for i in {00,01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19}
+  do
+    te=$((10#$e))
+    entropy=$(printf %.1f "$((te))e-1")
+    name=$(echo "hexa_${i}_${e}")
+    #echo "$name"
+    ./cellworld_create_hexa_world -world_name "$name" -seed $i -target_entropy "$entropy" | cw_save_item world "$name"
+  done
+done

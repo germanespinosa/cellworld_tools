@@ -70,6 +70,9 @@ target_link_libraries( cellworld_show_graph PUBLIC cellworld_tools )
 add_executable(cellworld_create_paths src/create_paths.cpp)
 target_link_libraries( cellworld_create_paths PUBLIC cellworld_tools )
 
+add_executable(cellworld_create_predator_locations src/create_predator_locations.cpp)
+target_link_libraries( cellworld_create_predator_locations PUBLIC cellworld_tools )
+
 add_executable(cellworld_create_poi_graph src/create_poi_graph.cpp)
 target_link_libraries( cellworld_create_poi_graph PUBLIC cellworld_tools )
 
@@ -78,6 +81,10 @@ target_link_libraries( cellworld_create_visibility PUBLIC cellworld_tools )
 
 add_executable(cellworld_show_paths src/show_paths.cpp)
 target_link_libraries( cellworld_show_paths PUBLIC cellworld_tools )
+
+add_executable(cellworld_create_hexa_world src/create_hexa_world.cpp)
+target_link_libraries( cellworld_create_hexa_world PUBLIC cellworld_tools )
+
 
 ###
 ### TESTS
@@ -112,7 +119,9 @@ if (CMAKE_BUILD_TYPE MATCHES Release)
     ### SCRIPT TOOLS INSTALLATION
     ###
 
-    install(DIRECTORY scripts/tools/ DESTINATION ${CMAKE_INSTALL_BINDIR})
+    install(DIRECTORY scripts/tools/
+            USE_SOURCE_PERMISSIONS
+            DESTINATION ${CMAKE_INSTALL_BINDIR})
 
     ###
     ### UTILITIES INSTALLATION
@@ -128,6 +137,7 @@ if (CMAKE_BUILD_TYPE MATCHES Release)
                     cellworld_show_paths
                     cellworld_create_visibility
                     cellworld_create_poi_graph
+                    cellworld_create_predator_locations
             RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 endif()
