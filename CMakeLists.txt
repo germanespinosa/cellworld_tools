@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.10 )
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 project( cellworld_tools
         VERSION 2019.1.0
@@ -24,7 +24,7 @@ add_library(cellworld_tools ${cellworld_tools_files})
 
 set_target_properties(cellworld_tools
         PROPERTIES
-        CXX_STANDARD 17
+        CXX_STANDARD 20
         CXX_STANDARD_REQUIRED On
         CXX_EXTENSIONS Off
         VERSION ${PROJECT_VERSION})
