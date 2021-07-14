@@ -4,12 +4,18 @@
 namespace cell_world {
     struct Random_agent : Stateless_agent {
 
-        Random_agent(const Cell &start_cell) : start_cell(start_cell) {
-            connections.load("{{\"x\"=0,\"y\"=-1},{\"x\"=0,\"y\"=1},{\"x\"=-1,\"y\"=0},{\"x\"=1,\"y\"=0}}");
+        Random_agent(const Cell &start_cell, const Connection_pattern &connection_pattern):
+            connections(connection_pattern){
+            cells.add(start_cell);
+        }
+
+        Random_agent(const Cell_group &cells, const Connection_pattern &connection_pattern):
+            cells(cells),
+            connections(connection_pattern){
         }
 
         const Cell &start_episode() override {
-            return start_cell;
+            return cells.random_cell();
         };
 
         Move get_move(const Model_public_state &state) override {
@@ -20,7 +26,7 @@ namespace cell_world {
             return Running;
         };
 
-        Connection_pattern connections;
-        const Cell &start_cell;
+        Cell_group cells;
+        const Connection_pattern &connections;
     };
 }
