@@ -1,0 +1,19 @@
+#!/bin/bash
+FILES="$CELLWORLD_DATA/world/hexa*"
+
+folder="$CELLWORLD_DATA/world"
+
+mkdir "$folder" -p
+
+for file in $FILES
+do
+  name=$(basename -s ".world" $file)
+  new_name="${name}_vr"
+  echo "$name"
+  cellworld_convert_to_vr -world "$name" | ./save_item world "$new_name"
+done
+
+cd "$folder"
+git add --all
+git commit --all --message "worlds updated"
+git push

@@ -64,6 +64,9 @@ target_link_libraries( cellworld_show_cell_group PUBLIC cellworld_tools )
 add_executable(cellworld_show_world src/show_world.cpp)
 target_link_libraries( cellworld_show_world PUBLIC cellworld_tools )
 
+add_executable(cellworld_convert_to_vr src/convert_to_vr_world.cpp)
+target_link_libraries( cellworld_convert_to_vr PUBLIC cellworld_tools )
+
 add_executable(cellworld_show_graph src/show_graph.cpp)
 target_link_libraries( cellworld_show_graph PUBLIC cellworld_tools )
 
@@ -95,7 +98,7 @@ find_package(CatchTests CONFIG QUIET)
 ### LIBRARY INSTALLATION
 ###
 
-if (CMAKE_BUILD_TYPE MATCHES Release)
+#if (CMAKE_BUILD_TYPE MATCHES Release)
 
     include(GNUInstallDirs)
 
@@ -138,6 +141,7 @@ if (CMAKE_BUILD_TYPE MATCHES Release)
                     cellworld_create_visibility
                     cellworld_create_poi_graph
                     cellworld_create_predator_locations
+                    cellworld_convert_to_vr
             RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
 
-endif()
+#endif()
