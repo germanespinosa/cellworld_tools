@@ -1,18 +1,19 @@
 #!/bin/bash
-FILES="$CELLWORLD_LEGACY/$1*.world"
+FILES="$CELLWORLD_DATA/world/hexa*"
 
 folder="$CELLWORLD_DATA/graph"
 
-mkdir "$folder" -p
+#mkdir "$folder" -p
 
 for file in $FILES
 do
+  #echo "$file"
   world_name=$(basename -s ".world" $file)
   echo "$world_name"
-  cellworld_create_visibility -world "$world_name" | cw_save_item graph "$world_name" "visibility"
+  cellworld_create_visibility -world "$world_name" | ./save_item graph "$world_name" "visibility"
 done
 
-cd "$folder"
-git add --all
-git commit --all --message "worlds updated"
-git push
+#cd "$folder"
+#git add --all
+#git commit --all --message "worlds updated"
+#git push
