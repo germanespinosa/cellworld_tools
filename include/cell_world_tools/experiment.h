@@ -25,9 +25,9 @@ namespace cell_world::vr {
                 Add_member(end_time);
                 Add_member(trajectories);
                 );
-        std::string start_time;
+        json_cpp::Json_date start_time;
         double time_stamp;
-        std::string end_time;
+        json_cpp::Json_date end_time;
         json_cpp::Json_vector<Episode_data_point> trajectories;
     };
     struct Experiment : json_cpp::Json_object {
