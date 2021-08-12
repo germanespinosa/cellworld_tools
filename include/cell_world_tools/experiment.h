@@ -2,6 +2,7 @@
 
 #include <json_cpp.h>
 #include <cell_world.h>
+#include <filesystem>
 
 namespace cell_world::vr {
     struct Episode_data_point : json_cpp::Json_object {
