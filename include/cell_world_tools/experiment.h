@@ -35,12 +35,14 @@ namespace cell_world::vr {
         Json_object_members(
                 Add_member(name);
                 Add_member(world_name);
+                Add_member(subject_name);
                 Add_member(duration);
                 Add_member(start_time);
                 Add_member(episodes);
                 );
         std::string name;
         std::string world_name;
+        std::string subject_name;
         unsigned int duration;
         std::string start_time;
         json_cpp::Json_vector<Episode> episodes;
