@@ -15,6 +15,11 @@ struct Parameters : Parameters_builder{
 int main(int argc, char **argv) {
     Parameters p;
     p.load(argc, argv);
+    if (p.world.connection_pattern.size()==4) {
+        for (auto &cell: p.world.cells) cell.location = {(double)cell.coordinates.x, (double)cell.coordinates.y};
+    } else {
+        for (auto &cell: p.world.cells) cell.location = {(double)cell.coordinates.x * .5, (double)cell.coordinates.y * sqrt(.75)};
+    }
     Graph visibility=Visibility::create_graph(p.world.create_cell_group());
     cout << visibility;
     return 0;

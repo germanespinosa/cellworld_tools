@@ -13,7 +13,7 @@ do
   cellworld_create_visibility -world "$world_name" | ./save_item graph "$world_name" "visibility"
 done
 
-#cd "$folder"
-#git add --all
-#git commit --all --message "worlds updated"
-#git push
+cd "$folder"
+git add --all
+git commit --all --message "worlds updated"
+git push
