@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cell_world.h>
 
 namespace cell_world {
