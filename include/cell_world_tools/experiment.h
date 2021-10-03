@@ -4,7 +4,7 @@
 #include <cell_world.h>
 #include <filesystem>
 
-namespace cell_world::vr {
+namespace cell_world {
     struct Episode_data_point : json_cpp::Json_object {
         Json_object_members(
                 Add_member(time_stamp);

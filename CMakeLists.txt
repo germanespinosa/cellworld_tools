@@ -18,7 +18,7 @@ set(cellworld_tools_files
         src/web_resources.cpp
         src/map_symbols.cpp
         src/screen_map.cpp
-        )
+        include/cell_world_tools/agent_info.h)
 
 add_library(cellworld_tools ${cellworld_tools_files})
 
