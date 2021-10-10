@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cellworld_create_cell_locations -world "hexa_00_00" | ./save_item cell_locations "hexagonal"
+cellworld_create_cell_locations -world "hexa_00_00_vr" | ./save_item cell_locations "hexagonal_vr"
+cellworld_create_cell_locations -world "hexa_00_00_mice" | ./save_item cell_locations "hexagonal_mice"
+cellworld_create_cell_locations -world "world_0_0" | ./save_item cell_locations "square"

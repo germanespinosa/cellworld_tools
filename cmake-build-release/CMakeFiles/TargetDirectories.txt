@@ -15,6 +15,7 @@
 /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/cellworld_show_cell_group.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/cellworld_show_world.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/install/strip.dir
+/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/cellworld_create_cell_locations.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/cellworld_create_paths.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/cellworld_create_predator_locations.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/cellworld_convert_to_vr.dir

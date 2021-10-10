@@ -324,6 +324,19 @@ cellworld_show_world/fast:
 .PHONY : cellworld_show_world/fast
 
 #=============================================================================
+# Target rules for targets named cellworld_create_cell_locations
+
+# Build rule for target.
+cellworld_create_cell_locations: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cellworld_create_cell_locations
+.PHONY : cellworld_create_cell_locations
+
+# fast build rule for target.
+cellworld_create_cell_locations/fast:
+	$(MAKE) -f CMakeFiles/cellworld_create_cell_locations.dir/build.make CMakeFiles/cellworld_create_cell_locations.dir/build
+.PHONY : cellworld_create_cell_locations/fast
+
+#=============================================================================
 # Target rules for targets named cellworld_create_paths
 
 # Build rule for target.
@@ -643,6 +656,33 @@ src/tools/convert_to_vr_world.s: src/tools/convert_to_vr_world.cpp.s
 src/tools/convert_to_vr_world.cpp.s:
 	$(MAKE) -f CMakeFiles/cellworld_convert_to_vr.dir/build.make CMakeFiles/cellworld_convert_to_vr.dir/src/tools/convert_to_vr_world.cpp.s
 .PHONY : src/tools/convert_to_vr_world.cpp.s
+
+src/tools/create_cell_locations.o: src/tools/create_cell_locations.cpp.o
+
+.PHONY : src/tools/create_cell_locations.o
+
+# target to build an object file
+src/tools/create_cell_locations.cpp.o:
+	$(MAKE) -f CMakeFiles/cellworld_create_cell_locations.dir/build.make CMakeFiles/cellworld_create_cell_locations.dir/src/tools/create_cell_locations.cpp.o
+.PHONY : src/tools/create_cell_locations.cpp.o
+
+src/tools/create_cell_locations.i: src/tools/create_cell_locations.cpp.i
+
+.PHONY : src/tools/create_cell_locations.i
+
+# target to preprocess a source file
+src/tools/create_cell_locations.cpp.i:
+	$(MAKE) -f CMakeFiles/cellworld_create_cell_locations.dir/build.make CMakeFiles/cellworld_create_cell_locations.dir/src/tools/create_cell_locations.cpp.i
+.PHONY : src/tools/create_cell_locations.cpp.i
+
+src/tools/create_cell_locations.s: src/tools/create_cell_locations.cpp.s
+
+.PHONY : src/tools/create_cell_locations.s
+
+# target to generate assembly for a file
+src/tools/create_cell_locations.cpp.s:
+	$(MAKE) -f CMakeFiles/cellworld_create_cell_locations.dir/build.make CMakeFiles/cellworld_create_cell_locations.dir/src/tools/create_cell_locations.cpp.s
+.PHONY : src/tools/create_cell_locations.cpp.s
 
 src/tools/create_hexa_world.o: src/tools/create_hexa_world.cpp.o
 
@@ -1073,6 +1113,7 @@ help:
 	@echo "... cellworld_show_cell_group"
 	@echo "... cellworld_show_world"
 	@echo "... install/strip"
+	@echo "... cellworld_create_cell_locations"
 	@echo "... cellworld_create_paths"
 	@echo "... cellworld_create_predator_locations"
 	@echo "... cellworld_convert_to_vr"
@@ -1107,6 +1148,9 @@ help:
 	@echo "... src/tools/convert_to_vr_world.o"
 	@echo "... src/tools/convert_to_vr_world.i"
 	@echo "... src/tools/convert_to_vr_world.s"
+	@echo "... src/tools/create_cell_locations.o"
+	@echo "... src/tools/create_cell_locations.i"
+	@echo "... src/tools/create_cell_locations.s"
 	@echo "... src/tools/create_hexa_world.o"
 	@echo "... src/tools/create_hexa_world.i"
 	@echo "... src/tools/create_hexa_world.s"

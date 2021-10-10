@@ -103,6 +103,9 @@ target_link_libraries( cellworld_create_world_configuration PUBLIC cellworld_too
 add_executable(cellworld_create_occlusions src/tools/create_occlusions.cpp)
 target_link_libraries( cellworld_create_occlusions PUBLIC cellworld_tools )
 
+add_executable(cellworld_create_cell_locations src/tools/create_cell_locations.cpp)
+target_link_libraries( cellworld_create_cell_locations PUBLIC cellworld_tools )
+
 ###
 ### TESTS
 ###
@@ -161,6 +164,7 @@ find_package(CatchTests CONFIG QUIET)
                     cellworld_convert_cell_descriptor
                     cellworld_create_world_configuration
                     cellworld_create_occlusions
+                    cellworld_create_cell_locations
             RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 #endif()
