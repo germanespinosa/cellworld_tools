@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/cell_world_tools/parameters_builder.h
+json_cpp.h
+-
+iostream
+-
+cell_world_tools/web_resources.h
+-
+
+../include/cell_world_tools/web_resources.h
+any
+-
+vector
+-
+string
+-
+sstream
+-
+fstream
+-
+
+/mnt/c/Research/robot/cellworld_tools/src/tools/create_world_configuration.cpp
+iostream
+-
+cell_world.h
+-
+cell_world_tools/parameters_builder.h
+-
+

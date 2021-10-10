@@ -1,0 +1,1 @@
+/usr/bin/g++-10  -g   CMakeFiles/cellworld_find_pois.dir/src/tools/find_pois.cpp.o  -o cellworld_find_pois  libcellworld_tools.a /usr/local/lib/libcellworld.a /usr/local/lib/libjson-cpp.a /usr/lib/x86_64-linux-gnu/libcurl.so 

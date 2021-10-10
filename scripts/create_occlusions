@@ -1,0 +1,14 @@
+#!/bin/bash
+FILES="$CELLWORLD_DATA/world/*"
+
+for file in $FILES
+do
+  world_name=$(basename -s ".world" $file)
+  echo "$world_name"
+  cellworld_create_occlusions -world "$world_name" | ./save_item cell_group "$world_name" "occlusions"
+done
+
+cd "$folder"
+git add --all
+git commit --all --message "worlds updated"
+git push
