@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cellworld_create_world_configuration -world "hexa_00_00" | ./save_item world_configuration "hexagonal"
+cellworld_create_world_configuration -world "world_0_0" | ./save_item world_configuration "square"

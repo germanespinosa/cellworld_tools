@@ -43,13 +43,12 @@ int main(int argc, char **argv) {
     world.connection_pattern.push_back(Move(1,1));
     world.connection_pattern.push_back(Move(-1,1));
     world.connection_pattern.push_back(Move(1,-1));
-
+    world.cell_descriptor = Cell_descriptor(6,.5001,0);
     for (int x = -20; x <= 20; x++) {
         for (int y = -10; y <= 10; y++) {
             if (abs(x) + abs(y) <= 20) {
                 if ((abs(x) + abs(y)) % 2 == 0) {
                     Cell new_cell;
-                    new_cell.cell_type = Circle;
                     new_cell.coordinates = Coordinates(x, y);
                     new_cell.location = Location(x * 110.0, y * 110.0);
                     new_cell.occluded = false;

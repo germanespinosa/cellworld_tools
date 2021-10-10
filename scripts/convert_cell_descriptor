@@ -1,0 +1,19 @@
+#!/bin/bash
+FILES="$CELLWORLD_DATA/world/hexa*"
+
+folder="$CELLWORLD_DATA/graph"
+
+#mkdir "$folder" -p
+
+for file in $FILES
+do
+  #echo "$file"
+  world_name=$(basename -s ".world" $file)
+  echo "$world_name"
+  cellworld_convert_cell_descriptor -world "$world_name" -cell_descriptor "hexagon" | ./save_item world "$world_name"
+done
+
+cd "$folder"
+git add --all
+git commit --all --message "worlds updated"
+git push

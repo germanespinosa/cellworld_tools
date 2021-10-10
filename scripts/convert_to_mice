@@ -14,9 +14,9 @@ do
   if [[ $name == *"mice"* ]]; then
     continue
   fi
-  new_name="${name}_vr"
+  new_name="${name}_mice"
   echo "$name"
-  cellworld_convert_to_vr -world "$name" | ./save_item world "$new_name"
+  cellworld_convert_to_mice -world "$name" | ./save_item world "$new_name"
 done
 
 cd "$folder"

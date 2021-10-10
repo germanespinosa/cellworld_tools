@@ -18,7 +18,7 @@ set(cellworld_tools_files
         src/web_resources.cpp
         src/map_symbols.cpp
         src/screen_map.cpp
-        include/cell_world_tools/agent_info.h)
+        )
 
 add_library(cellworld_tools ${cellworld_tools_files})
 
@@ -55,39 +55,50 @@ target_link_libraries( cellworld_tools
 
 include_directories( include )
 
-add_executable(cellworld_find_pois src/find_pois.cpp)
+add_executable(cellworld_find_pois src/tools/find_pois.cpp)
 target_link_libraries( cellworld_find_pois PUBLIC cellworld_tools )
 
-add_executable(cellworld_show_cell_group src/show_cell_group.cpp)
+add_executable(cellworld_show_cell_group src/tools/show_cell_group.cpp)
 target_link_libraries( cellworld_show_cell_group PUBLIC cellworld_tools )
 
-add_executable(cellworld_show_world src/show_world.cpp)
+add_executable(cellworld_show_world src/tools/show_world.cpp)
 target_link_libraries( cellworld_show_world PUBLIC cellworld_tools )
 
-add_executable(cellworld_convert_to_vr src/convert_to_vr_world.cpp)
+add_executable(cellworld_convert_to_vr src/tools/convert_to_vr_world.cpp)
 target_link_libraries( cellworld_convert_to_vr PUBLIC cellworld_tools )
 
-add_executable(cellworld_show_graph src/show_graph.cpp)
+add_executable(cellworld_convert_to_mice src/tools/convert_to_mice_world.cpp)
+target_link_libraries( cellworld_convert_to_mice PUBLIC cellworld_tools )
+
+add_executable(cellworld_show_graph src/tools/show_graph.cpp)
 target_link_libraries( cellworld_show_graph PUBLIC cellworld_tools )
 
-add_executable(cellworld_create_paths src/create_paths.cpp)
+add_executable(cellworld_create_paths src/tools/create_paths.cpp)
 target_link_libraries( cellworld_create_paths PUBLIC cellworld_tools )
 
-add_executable(cellworld_create_predator_locations src/create_predator_locations.cpp)
+add_executable(cellworld_create_predator_locations src/tools/create_predator_locations.cpp)
 target_link_libraries( cellworld_create_predator_locations PUBLIC cellworld_tools )
 
-add_executable(cellworld_create_poi_graph src/create_poi_graph.cpp)
+add_executable(cellworld_create_poi_graph src/tools/create_poi_graph.cpp)
 target_link_libraries( cellworld_create_poi_graph PUBLIC cellworld_tools )
 
-add_executable(cellworld_create_visibility src/create_visibility.cpp)
+add_executable(cellworld_create_visibility src/tools/create_visibility.cpp)
 target_link_libraries( cellworld_create_visibility PUBLIC cellworld_tools )
 
-add_executable(cellworld_show_paths src/show_paths.cpp)
+add_executable(cellworld_create_navigability src/tools/create_navigability.cpp)
+target_link_libraries( cellworld_create_navigability PUBLIC cellworld_tools )
+
+add_executable(cellworld_show_paths src/tools/show_paths.cpp)
 target_link_libraries( cellworld_show_paths PUBLIC cellworld_tools )
 
-add_executable(cellworld_create_hexa_world src/create_hexa_world.cpp)
+add_executable(cellworld_create_hexa_world src/tools/create_hexa_world.cpp)
 target_link_libraries( cellworld_create_hexa_world PUBLIC cellworld_tools )
 
+add_executable(cellworld_convert_cell_descriptor src/tools/convert_cell_descriptor.cpp)
+target_link_libraries( cellworld_convert_cell_descriptor PUBLIC cellworld_tools )
+
+add_executable(cellworld_create_world_configuration src/tools/create_world_configuration.cpp)
+target_link_libraries( cellworld_create_world_configuration PUBLIC cellworld_tools )
 
 ###
 ### TESTS
@@ -139,9 +150,13 @@ find_package(CatchTests CONFIG QUIET)
                     cellworld_create_paths
                     cellworld_show_paths
                     cellworld_create_visibility
+                    cellworld_create_navigability
                     cellworld_create_poi_graph
                     cellworld_create_predator_locations
                     cellworld_convert_to_vr
+                    cellworld_convert_to_mice
+                    cellworld_convert_cell_descriptor
+                    cellworld_create_world_configuration
             RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 #endif()
