@@ -94,7 +94,7 @@ target_link_libraries( cellworld_show_paths PUBLIC cellworld_tools )
 add_executable(cellworld_create_hexa_world src/tools/create_hexa_world.cpp)
 target_link_libraries( cellworld_create_hexa_world PUBLIC cellworld_tools )
 
-add_executable(cellworld_convert_cell_descriptor src/tools/convert_cell_descriptor.cpp)
+add_executable(cellworld_convert_cell_descriptor src/tools/convert_cell_descriptor.cpp src/tools/create_hexa_canonical.cpp)
 target_link_libraries( cellworld_convert_cell_descriptor PUBLIC cellworld_tools )
 
 add_executable(cellworld_create_world_configuration src/tools/create_world_configuration.cpp)
@@ -105,6 +105,10 @@ target_link_libraries( cellworld_create_occlusions PUBLIC cellworld_tools )
 
 add_executable(cellworld_create_cell_locations src/tools/create_cell_locations.cpp)
 target_link_libraries( cellworld_create_cell_locations PUBLIC cellworld_tools )
+
+add_executable(cellworld_create_hexa_canonical src/tools/create_hexa_canonical.cpp)
+target_link_libraries( cellworld_create_hexa_canonical PUBLIC cellworld_tools )
+
 
 ###
 ### TESTS

@@ -14,6 +14,7 @@
 /mnt/c/Research/robot/cellworld_tools/cmake-build-debug/CMakeFiles/cellworld_create_poi_graph.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-debug/CMakeFiles/cellworld_tools_tests.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-debug/CMakeFiles/cellworld_show_cell_group.dir
+/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/CMakeFiles/cellworld_create_hexa_canonical.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-debug/CMakeFiles/cellworld_show_world.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-debug/CMakeFiles/install/strip.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-debug/CMakeFiles/cellworld_create_cell_locations.dir

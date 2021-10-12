@@ -1,0 +1,16 @@
+#!/bin/bash
+
+FILES="$CELLWORLD_DATA/cell_group/square*"
+
+for file in $FILES
+do
+  world_name=$(basename $file)
+  new_name=$(python3 -c "wn='$world_name'.split('.');s=('0'+wn[1].split('_')[0])[-2:];e=('0'+wn[1].split('_')[1])[-2:];print('square.'+ s +'_' + e +'.'+wn[2])")
+  echo "$world_name $new_name"
+
+  mv "$CELLWORLD_DATA/cell_group/$world_name" "$CELLWORLD_DATA/cell_group/$new_name"
+
+  #Read the split words into an array based on space delimiter
+
+  #echo "$strarr"
+done
