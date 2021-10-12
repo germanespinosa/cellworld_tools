@@ -298,6 +298,19 @@ cellworld_show_cell_group/fast:
 .PHONY : cellworld_show_cell_group/fast
 
 #=============================================================================
+# Target rules for targets named cellworld_create_hexa_canonical
+
+# Build rule for target.
+cellworld_create_hexa_canonical: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cellworld_create_hexa_canonical
+.PHONY : cellworld_create_hexa_canonical
+
+# fast build rule for target.
+cellworld_create_hexa_canonical/fast:
+	$(MAKE) -f CMakeFiles/cellworld_create_hexa_canonical.dir/build.make CMakeFiles/cellworld_create_hexa_canonical.dir/build
+.PHONY : cellworld_create_hexa_canonical/fast
+
+#=============================================================================
 # Target rules for targets named cellworld_show_world
 
 # Build rule for target.
@@ -589,6 +602,33 @@ src/tools/create_cell_locations.s: src/tools/create_cell_locations.cpp.s
 src/tools/create_cell_locations.cpp.s:
 	$(MAKE) -f CMakeFiles/cellworld_create_cell_locations.dir/build.make CMakeFiles/cellworld_create_cell_locations.dir/src/tools/create_cell_locations.cpp.s
 .PHONY : src/tools/create_cell_locations.cpp.s
+
+src/tools/create_hexa_canonical.o: src/tools/create_hexa_canonical.cpp.o
+
+.PHONY : src/tools/create_hexa_canonical.o
+
+# target to build an object file
+src/tools/create_hexa_canonical.cpp.o:
+	$(MAKE) -f CMakeFiles/cellworld_create_hexa_canonical.dir/build.make CMakeFiles/cellworld_create_hexa_canonical.dir/src/tools/create_hexa_canonical.cpp.o
+.PHONY : src/tools/create_hexa_canonical.cpp.o
+
+src/tools/create_hexa_canonical.i: src/tools/create_hexa_canonical.cpp.i
+
+.PHONY : src/tools/create_hexa_canonical.i
+
+# target to preprocess a source file
+src/tools/create_hexa_canonical.cpp.i:
+	$(MAKE) -f CMakeFiles/cellworld_create_hexa_canonical.dir/build.make CMakeFiles/cellworld_create_hexa_canonical.dir/src/tools/create_hexa_canonical.cpp.i
+.PHONY : src/tools/create_hexa_canonical.cpp.i
+
+src/tools/create_hexa_canonical.s: src/tools/create_hexa_canonical.cpp.s
+
+.PHONY : src/tools/create_hexa_canonical.s
+
+# target to generate assembly for a file
+src/tools/create_hexa_canonical.cpp.s:
+	$(MAKE) -f CMakeFiles/cellworld_create_hexa_canonical.dir/build.make CMakeFiles/cellworld_create_hexa_canonical.dir/src/tools/create_hexa_canonical.cpp.s
+.PHONY : src/tools/create_hexa_canonical.cpp.s
 
 src/tools/create_hexa_world.o: src/tools/create_hexa_world.cpp.o
 
@@ -989,6 +1029,7 @@ help:
 	@echo "... cellworld_convert_to_mice"
 	@echo "... cellworld_create_poi_graph"
 	@echo "... cellworld_show_cell_group"
+	@echo "... cellworld_create_hexa_canonical"
 	@echo "... cellworld_show_world"
 	@echo "... install/strip"
 	@echo "... cellworld_create_cell_locations"
@@ -1020,6 +1061,9 @@ help:
 	@echo "... src/tools/create_cell_locations.o"
 	@echo "... src/tools/create_cell_locations.i"
 	@echo "... src/tools/create_cell_locations.s"
+	@echo "... src/tools/create_hexa_canonical.o"
+	@echo "... src/tools/create_hexa_canonical.i"
+	@echo "... src/tools/create_hexa_canonical.s"
 	@echo "... src/tools/create_hexa_world.o"
 	@echo "... src/tools/create_hexa_world.i"
 	@echo "... src/tools/create_hexa_world.s"
