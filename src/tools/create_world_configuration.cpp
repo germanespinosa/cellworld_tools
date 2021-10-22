@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
         world_configuration.cell_coordinates.push_back(cell.coordinates);
     }
     world_configuration.connection_pattern = p.world.connection_pattern;
-    world_configuration.cell_descriptor = p.world.cell_descriptor;
+    world_configuration.cell_shape = p.world.cell_shape;
     cout << world_configuration;
     return 0;
 }

@@ -36,14 +36,14 @@ int main(int argc, char **argv) {
     p.load(argc, argv);
     srand(p.seed);
     World world;
-    world.name = p.world_name;
     world.connection_pattern.push_back(Move(-2,0));
     world.connection_pattern.push_back(Move(2,0));
     world.connection_pattern.push_back(Move(-1,-1));
     world.connection_pattern.push_back(Move(1,1));
     world.connection_pattern.push_back(Move(-1,1));
     world.connection_pattern.push_back(Move(1,-1));
-    world.cell_descriptor = Cell_descriptor(6,.5001,0);
+    world.cell_shape = Shape(6);
+    world.cell_transformation = Transformation(.5001,0);
     for (int x = -20; x <= 20; x++) {
         for (int y = -10; y <= 10; y++) {
             if (abs(x) + abs(y) <= 20) {

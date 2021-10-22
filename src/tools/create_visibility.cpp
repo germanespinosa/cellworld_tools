@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
     } else {
         for (auto &cell: p.world.cells) cell.location = {(double)cell.coordinates.x * .5, (double)cell.coordinates.y * sqrt(.75)};
     }
-    Graph visibility=Visibility::create_graph(p.world.create_cell_group(),Cell_descriptor(6,.5001,0));
+    Graph visibility=Coordinates_visibility::create_graph(p.world.create_cell_group(),p.world.cell_shape,p.world.cell_transformation);
     cout << visibility;
     return 0;
 }

@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/cellworld_convert_cell_descriptor.dir/src/tools/convert_cell_descriptor.cpp.o"
-  "CMakeFiles/cellworld_convert_cell_descriptor.dir/src/tools/create_hexa_canonical.cpp.o"
   "cellworld_convert_cell_descriptor"
   "cellworld_convert_cell_descriptor.pdb"
 )

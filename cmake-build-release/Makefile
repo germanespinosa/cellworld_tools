@@ -194,19 +194,6 @@ cellworld_create_world_configuration/fast:
 .PHONY : cellworld_create_world_configuration/fast
 
 #=============================================================================
-# Target rules for targets named cellworld_convert_cell_descriptor
-
-# Build rule for target.
-cellworld_convert_cell_descriptor: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_convert_cell_descriptor
-.PHONY : cellworld_convert_cell_descriptor
-
-# fast build rule for target.
-cellworld_convert_cell_descriptor/fast:
-	$(MAKE) -f CMakeFiles/cellworld_convert_cell_descriptor.dir/build.make CMakeFiles/cellworld_convert_cell_descriptor.dir/build
-.PHONY : cellworld_convert_cell_descriptor/fast
-
-#=============================================================================
 # Target rules for targets named cellworld_tools
 
 # Build rule for target.
@@ -494,33 +481,6 @@ src/screen_map.s: src/screen_map.cpp.s
 src/screen_map.cpp.s:
 	$(MAKE) -f CMakeFiles/cellworld_tools.dir/build.make CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.s
 .PHONY : src/screen_map.cpp.s
-
-src/tools/convert_cell_descriptor.o: src/tools/convert_cell_descriptor.cpp.o
-
-.PHONY : src/tools/convert_cell_descriptor.o
-
-# target to build an object file
-src/tools/convert_cell_descriptor.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_convert_cell_descriptor.dir/build.make CMakeFiles/cellworld_convert_cell_descriptor.dir/src/tools/convert_cell_descriptor.cpp.o
-.PHONY : src/tools/convert_cell_descriptor.cpp.o
-
-src/tools/convert_cell_descriptor.i: src/tools/convert_cell_descriptor.cpp.i
-
-.PHONY : src/tools/convert_cell_descriptor.i
-
-# target to preprocess a source file
-src/tools/convert_cell_descriptor.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_convert_cell_descriptor.dir/build.make CMakeFiles/cellworld_convert_cell_descriptor.dir/src/tools/convert_cell_descriptor.cpp.i
-.PHONY : src/tools/convert_cell_descriptor.cpp.i
-
-src/tools/convert_cell_descriptor.s: src/tools/convert_cell_descriptor.cpp.s
-
-.PHONY : src/tools/convert_cell_descriptor.s
-
-# target to generate assembly for a file
-src/tools/convert_cell_descriptor.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_convert_cell_descriptor.dir/build.make CMakeFiles/cellworld_convert_cell_descriptor.dir/src/tools/convert_cell_descriptor.cpp.s
-.PHONY : src/tools/convert_cell_descriptor.cpp.s
 
 src/tools/convert_to_mice_world.o: src/tools/convert_to_mice_world.cpp.o
 
@@ -1021,7 +981,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... cellworld_create_occlusions"
 	@echo "... cellworld_create_world_configuration"
-	@echo "... cellworld_convert_cell_descriptor"
 	@echo "... cellworld_tools"
 	@echo "... cellworld_create_hexa_world"
 	@echo "... cellworld_find_pois"
@@ -1049,9 +1008,6 @@ help:
 	@echo "... src/screen_map.o"
 	@echo "... src/screen_map.i"
 	@echo "... src/screen_map.s"
-	@echo "... src/tools/convert_cell_descriptor.o"
-	@echo "... src/tools/convert_cell_descriptor.i"
-	@echo "... src/tools/convert_cell_descriptor.s"
 	@echo "... src/tools/convert_to_mice_world.o"
 	@echo "... src/tools/convert_to_mice_world.i"
 	@echo "... src/tools/convert_to_mice_world.s"

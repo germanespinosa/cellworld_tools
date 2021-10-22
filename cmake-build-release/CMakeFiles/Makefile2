@@ -55,7 +55,6 @@ CMAKE_BINARY_DIR = /mnt/c/Research/robot/cellworld_tools/cmake-build-release
 # The main recursive "all" target.
 all: CMakeFiles/cellworld_create_occlusions.dir/all
 all: CMakeFiles/cellworld_create_world_configuration.dir/all
-all: CMakeFiles/cellworld_convert_cell_descriptor.dir/all
 all: CMakeFiles/cellworld_tools.dir/all
 all: CMakeFiles/cellworld_create_hexa_world.dir/all
 all: CMakeFiles/cellworld_find_pois.dir/all
@@ -83,7 +82,6 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/cellworld_create_occlusions.dir/clean
 clean: CMakeFiles/cellworld_create_world_configuration.dir/clean
-clean: CMakeFiles/cellworld_convert_cell_descriptor.dir/clean
 clean: CMakeFiles/cellworld_tools.dir/clean
 clean: CMakeFiles/cellworld_create_hexa_world.dir/clean
 clean: CMakeFiles/cellworld_find_pois.dir/clean
@@ -110,7 +108,7 @@ clean: CMakeFiles/cellworld_show_paths.dir/clean
 CMakeFiles/cellworld_create_occlusions.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_create_occlusions.dir/build.make CMakeFiles/cellworld_create_occlusions.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_create_occlusions.dir/build.make CMakeFiles/cellworld_create_occlusions.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=15,16 "Built target cellworld_create_occlusions"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=13,14 "Built target cellworld_create_occlusions"
 .PHONY : CMakeFiles/cellworld_create_occlusions.dir/all
 
 # Build rule for subdir invocation for target.
@@ -137,7 +135,7 @@ CMakeFiles/cellworld_create_occlusions.dir/clean:
 CMakeFiles/cellworld_create_world_configuration.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_create_world_configuration.dir/build.make CMakeFiles/cellworld_create_world_configuration.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_create_world_configuration.dir/build.make CMakeFiles/cellworld_create_world_configuration.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=25,26 "Built target cellworld_create_world_configuration"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=23,24 "Built target cellworld_create_world_configuration"
 .PHONY : CMakeFiles/cellworld_create_world_configuration.dir/all
 
 # Build rule for subdir invocation for target.
@@ -158,40 +156,13 @@ CMakeFiles/cellworld_create_world_configuration.dir/clean:
 .PHONY : CMakeFiles/cellworld_create_world_configuration.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/cellworld_convert_cell_descriptor.dir
-
-# All Build rule for target.
-CMakeFiles/cellworld_convert_cell_descriptor.dir/all: CMakeFiles/cellworld_tools.dir/all
-	$(MAKE) -f CMakeFiles/cellworld_convert_cell_descriptor.dir/build.make CMakeFiles/cellworld_convert_cell_descriptor.dir/depend
-	$(MAKE) -f CMakeFiles/cellworld_convert_cell_descriptor.dir/build.make CMakeFiles/cellworld_convert_cell_descriptor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=1,2 "Built target cellworld_convert_cell_descriptor"
-.PHONY : CMakeFiles/cellworld_convert_cell_descriptor.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/cellworld_convert_cell_descriptor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles 7
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/cellworld_convert_cell_descriptor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles 0
-.PHONY : CMakeFiles/cellworld_convert_cell_descriptor.dir/rule
-
-# Convenience name for target.
-cellworld_convert_cell_descriptor: CMakeFiles/cellworld_convert_cell_descriptor.dir/rule
-
-.PHONY : cellworld_convert_cell_descriptor
-
-# clean rule for target.
-CMakeFiles/cellworld_convert_cell_descriptor.dir/clean:
-	$(MAKE) -f CMakeFiles/cellworld_convert_cell_descriptor.dir/build.make CMakeFiles/cellworld_convert_cell_descriptor.dir/clean
-.PHONY : CMakeFiles/cellworld_convert_cell_descriptor.dir/clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/cellworld_tools.dir
 
 # All Build rule for target.
 CMakeFiles/cellworld_tools.dir/all:
 	$(MAKE) -f CMakeFiles/cellworld_tools.dir/build.make CMakeFiles/cellworld_tools.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_tools.dir/build.make CMakeFiles/cellworld_tools.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=37,38,39,40,41 "Built target cellworld_tools"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=35,36,37,38,39 "Built target cellworld_tools"
 .PHONY : CMakeFiles/cellworld_tools.dir/all
 
 # Build rule for subdir invocation for target.
@@ -218,7 +189,7 @@ CMakeFiles/cellworld_tools.dir/clean:
 CMakeFiles/cellworld_create_hexa_world.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_create_hexa_world.dir/build.make CMakeFiles/cellworld_create_hexa_world.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_create_hexa_world.dir/build.make CMakeFiles/cellworld_create_hexa_world.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=11,12 "Built target cellworld_create_hexa_world"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=9,10 "Built target cellworld_create_hexa_world"
 .PHONY : CMakeFiles/cellworld_create_hexa_world.dir/all
 
 # Build rule for subdir invocation for target.
@@ -245,7 +216,7 @@ CMakeFiles/cellworld_create_hexa_world.dir/clean:
 CMakeFiles/cellworld_find_pois.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_find_pois.dir/build.make CMakeFiles/cellworld_find_pois.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_find_pois.dir/build.make CMakeFiles/cellworld_find_pois.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=27,28 "Built target cellworld_find_pois"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=25,26 "Built target cellworld_find_pois"
 .PHONY : CMakeFiles/cellworld_find_pois.dir/all
 
 # Build rule for subdir invocation for target.
@@ -272,7 +243,7 @@ CMakeFiles/cellworld_find_pois.dir/clean:
 CMakeFiles/cellworld_show_graph.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_show_graph.dir/build.make CMakeFiles/cellworld_show_graph.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_show_graph.dir/build.make CMakeFiles/cellworld_show_graph.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=31,32 "Built target cellworld_show_graph"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=29,30 "Built target cellworld_show_graph"
 .PHONY : CMakeFiles/cellworld_show_graph.dir/all
 
 # Build rule for subdir invocation for target.
@@ -299,7 +270,7 @@ CMakeFiles/cellworld_show_graph.dir/clean:
 CMakeFiles/cellworld_convert_to_mice.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_convert_to_mice.dir/build.make CMakeFiles/cellworld_convert_to_mice.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_convert_to_mice.dir/build.make CMakeFiles/cellworld_convert_to_mice.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=3,4 "Built target cellworld_convert_to_mice"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=1,2 "Built target cellworld_convert_to_mice"
 .PHONY : CMakeFiles/cellworld_convert_to_mice.dir/all
 
 # Build rule for subdir invocation for target.
@@ -326,7 +297,7 @@ CMakeFiles/cellworld_convert_to_mice.dir/clean:
 CMakeFiles/cellworld_create_poi_graph.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_create_poi_graph.dir/build.make CMakeFiles/cellworld_create_poi_graph.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_create_poi_graph.dir/build.make CMakeFiles/cellworld_create_poi_graph.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=19,20 "Built target cellworld_create_poi_graph"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=17,18 "Built target cellworld_create_poi_graph"
 .PHONY : CMakeFiles/cellworld_create_poi_graph.dir/all
 
 # Build rule for subdir invocation for target.
@@ -353,7 +324,7 @@ CMakeFiles/cellworld_create_poi_graph.dir/clean:
 CMakeFiles/cellworld_show_cell_group.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_show_cell_group.dir/build.make CMakeFiles/cellworld_show_cell_group.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_show_cell_group.dir/build.make CMakeFiles/cellworld_show_cell_group.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=29,30 "Built target cellworld_show_cell_group"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=27,28 "Built target cellworld_show_cell_group"
 .PHONY : CMakeFiles/cellworld_show_cell_group.dir/all
 
 # Build rule for subdir invocation for target.
@@ -380,7 +351,7 @@ CMakeFiles/cellworld_show_cell_group.dir/clean:
 CMakeFiles/cellworld_create_hexa_canonical.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_create_hexa_canonical.dir/build.make CMakeFiles/cellworld_create_hexa_canonical.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_create_hexa_canonical.dir/build.make CMakeFiles/cellworld_create_hexa_canonical.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=9,10 "Built target cellworld_create_hexa_canonical"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=7,8 "Built target cellworld_create_hexa_canonical"
 .PHONY : CMakeFiles/cellworld_create_hexa_canonical.dir/all
 
 # Build rule for subdir invocation for target.
@@ -407,7 +378,7 @@ CMakeFiles/cellworld_create_hexa_canonical.dir/clean:
 CMakeFiles/cellworld_show_world.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_show_world.dir/build.make CMakeFiles/cellworld_show_world.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_show_world.dir/build.make CMakeFiles/cellworld_show_world.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=35,36 "Built target cellworld_show_world"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=33,34 "Built target cellworld_show_world"
 .PHONY : CMakeFiles/cellworld_show_world.dir/all
 
 # Build rule for subdir invocation for target.
@@ -434,7 +405,7 @@ CMakeFiles/cellworld_show_world.dir/clean:
 CMakeFiles/cellworld_create_cell_locations.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_create_cell_locations.dir/build.make CMakeFiles/cellworld_create_cell_locations.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_create_cell_locations.dir/build.make CMakeFiles/cellworld_create_cell_locations.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=7,8 "Built target cellworld_create_cell_locations"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=5,6 "Built target cellworld_create_cell_locations"
 .PHONY : CMakeFiles/cellworld_create_cell_locations.dir/all
 
 # Build rule for subdir invocation for target.
@@ -461,7 +432,7 @@ CMakeFiles/cellworld_create_cell_locations.dir/clean:
 CMakeFiles/cellworld_create_paths.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_create_paths.dir/build.make CMakeFiles/cellworld_create_paths.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_create_paths.dir/build.make CMakeFiles/cellworld_create_paths.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=17,18 "Built target cellworld_create_paths"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=15,16 "Built target cellworld_create_paths"
 .PHONY : CMakeFiles/cellworld_create_paths.dir/all
 
 # Build rule for subdir invocation for target.
@@ -488,7 +459,7 @@ CMakeFiles/cellworld_create_paths.dir/clean:
 CMakeFiles/cellworld_create_predator_locations.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_create_predator_locations.dir/build.make CMakeFiles/cellworld_create_predator_locations.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_create_predator_locations.dir/build.make CMakeFiles/cellworld_create_predator_locations.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=21,22 "Built target cellworld_create_predator_locations"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=19,20 "Built target cellworld_create_predator_locations"
 .PHONY : CMakeFiles/cellworld_create_predator_locations.dir/all
 
 # Build rule for subdir invocation for target.
@@ -515,7 +486,7 @@ CMakeFiles/cellworld_create_predator_locations.dir/clean:
 CMakeFiles/cellworld_convert_to_vr.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_convert_to_vr.dir/build.make CMakeFiles/cellworld_convert_to_vr.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_convert_to_vr.dir/build.make CMakeFiles/cellworld_convert_to_vr.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=5,6 "Built target cellworld_convert_to_vr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=3,4 "Built target cellworld_convert_to_vr"
 .PHONY : CMakeFiles/cellworld_convert_to_vr.dir/all
 
 # Build rule for subdir invocation for target.
@@ -542,7 +513,7 @@ CMakeFiles/cellworld_convert_to_vr.dir/clean:
 CMakeFiles/cellworld_create_navigability.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_create_navigability.dir/build.make CMakeFiles/cellworld_create_navigability.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_create_navigability.dir/build.make CMakeFiles/cellworld_create_navigability.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=13,14 "Built target cellworld_create_navigability"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=11,12 "Built target cellworld_create_navigability"
 .PHONY : CMakeFiles/cellworld_create_navigability.dir/all
 
 # Build rule for subdir invocation for target.
@@ -569,7 +540,7 @@ CMakeFiles/cellworld_create_navigability.dir/clean:
 CMakeFiles/cellworld_create_visibility.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_create_visibility.dir/build.make CMakeFiles/cellworld_create_visibility.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_create_visibility.dir/build.make CMakeFiles/cellworld_create_visibility.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=23,24 "Built target cellworld_create_visibility"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=21,22 "Built target cellworld_create_visibility"
 .PHONY : CMakeFiles/cellworld_create_visibility.dir/all
 
 # Build rule for subdir invocation for target.
@@ -596,7 +567,7 @@ CMakeFiles/cellworld_create_visibility.dir/clean:
 CMakeFiles/cellworld_show_paths.dir/all: CMakeFiles/cellworld_tools.dir/all
 	$(MAKE) -f CMakeFiles/cellworld_show_paths.dir/build.make CMakeFiles/cellworld_show_paths.dir/depend
 	$(MAKE) -f CMakeFiles/cellworld_show_paths.dir/build.make CMakeFiles/cellworld_show_paths.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=33,34 "Built target cellworld_show_paths"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=31,32 "Built target cellworld_show_paths"
 .PHONY : CMakeFiles/cellworld_show_paths.dir/all
 
 # Build rule for subdir invocation for target.

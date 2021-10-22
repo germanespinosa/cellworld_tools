@@ -1,4 +1,4 @@
-C:\Windows\system32\wsl.exe --distribution Ubuntu-20.04 --exec /bin/sh -c "export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/c/Research/robot/cellworld_tools/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc-10 '-DCMAKE_CXX_COMPILER=/usr/bin/g++-10' -G 'CodeBlocks - Unix Makefiles' /mnt/c/Research/robot/cellworld_tools; sleep 0.001"
+C:\Windows\system32\wsl.exe --distribution Ubuntu-20.04 --exec /bin/sh -c "export CLION_IDE=TRUE && export JETBRAINS_IDE=TRUE && cd /mnt/c/Research/robot/cellworld_tools/cmake-build-debug && /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc-10 '-DCMAKE_CXX_COMPILER=/usr/bin/g++-10' -G 'CodeBlocks - Unix Makefiles' /mnt/c/Research/robot/cellworld_tools; exitcode=$?; sleep 0.001; (exit $exitcode)"
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /mnt/c/Research/robot/cellworld_tools/cmake-build-debug

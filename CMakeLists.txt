@@ -94,9 +94,6 @@ target_link_libraries( cellworld_show_paths PUBLIC cellworld_tools )
 add_executable(cellworld_create_hexa_world src/tools/create_hexa_world.cpp)
 target_link_libraries( cellworld_create_hexa_world PUBLIC cellworld_tools )
 
-add_executable(cellworld_convert_cell_descriptor src/tools/convert_cell_descriptor.cpp )
-target_link_libraries( cellworld_convert_cell_descriptor PUBLIC cellworld_tools )
-
 add_executable(cellworld_create_world_configuration src/tools/create_world_configuration.cpp)
 target_link_libraries( cellworld_create_world_configuration PUBLIC cellworld_tools )
 
@@ -165,7 +162,6 @@ find_package(CatchTests CONFIG QUIET)
                     cellworld_create_predator_locations
                     cellworld_convert_to_vr
                     cellworld_convert_to_mice
-                    cellworld_convert_cell_descriptor
                     cellworld_create_world_configuration
                     cellworld_create_occlusions
                     cellworld_create_cell_locations

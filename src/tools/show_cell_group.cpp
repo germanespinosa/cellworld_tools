@@ -20,7 +20,6 @@ int main(int argc, char **argv) {
     Parameters p;
     p.load(argc, argv);
     cout << "World Loaded successfully" << endl;
-    cout << "name: " << p.world.name << endl;
     cout << "connection_pattern: " << p.world.connection_pattern << endl;
     cout << "cells: " << p.world.size() << endl;
     cout << "occlusions: " << p.world.create_cell_group().occluded_cells().size() << endl;

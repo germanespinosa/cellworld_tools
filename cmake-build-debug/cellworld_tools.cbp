@@ -159,52 +159,6 @@
 					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="cellworld_convert_cell_descriptor">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_convert_cell_descriptor" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_convert_cell_descriptor"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cellworld_convert_cell_descriptor/fast">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_convert_cell_descriptor" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_convert_cell_descriptor/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="cellworld_tools">
 				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/libcellworld_tools.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
@@ -1026,9 +980,6 @@
 		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/screen_map.cpp">
 			<Option target="cellworld_tools"/>
 		</Unit>
-		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/tools/convert_cell_descriptor.cpp">
-			<Option target="cellworld_convert_cell_descriptor"/>
-		</Unit>
 		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/tools/convert_to_mice_world.cpp">
 			<Option target="cellworld_convert_to_mice"/>
 		</Unit>
@@ -1039,7 +990,6 @@
 			<Option target="cellworld_create_cell_locations"/>
 		</Unit>
 		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/tools/create_hexa_canonical.cpp">
-			<Option target="cellworld_convert_cell_descriptor"/>
 			<Option target="cellworld_create_hexa_canonical"/>
 		</Unit>
 		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/tools/create_hexa_world.cpp">

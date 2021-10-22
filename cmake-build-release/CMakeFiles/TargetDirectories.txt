@@ -5,7 +5,6 @@
 /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/list_install_components.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/cellworld_create_occlusions.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/cellworld_create_world_configuration.dir
-/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/cellworld_convert_cell_descriptor.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/cellworld_tools.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/cellworld_create_hexa_world.dir
 /mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles/cellworld_find_pois.dir
