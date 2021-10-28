@@ -80,6 +80,27 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -102,16 +123,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -123,17 +134,6 @@ install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,32 +168,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named cellworld_create_occlusions
-
-# Build rule for target.
-cellworld_create_occlusions: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_create_occlusions
-.PHONY : cellworld_create_occlusions
-
-# fast build rule for target.
-cellworld_create_occlusions/fast:
-	$(MAKE) -f CMakeFiles/cellworld_create_occlusions.dir/build.make CMakeFiles/cellworld_create_occlusions.dir/build
-.PHONY : cellworld_create_occlusions/fast
-
-#=============================================================================
-# Target rules for targets named cellworld_create_world_configuration
-
-# Build rule for target.
-cellworld_create_world_configuration: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_create_world_configuration
-.PHONY : cellworld_create_world_configuration
-
-# fast build rule for target.
-cellworld_create_world_configuration/fast:
-	$(MAKE) -f CMakeFiles/cellworld_create_world_configuration.dir/build.make CMakeFiles/cellworld_create_world_configuration.dir/build
-.PHONY : cellworld_create_world_configuration/fast
-
-#=============================================================================
 # Target rules for targets named cellworld_tools
 
 # Build rule for target.
@@ -205,19 +179,6 @@ cellworld_tools: cmake_check_build_system
 cellworld_tools/fast:
 	$(MAKE) -f CMakeFiles/cellworld_tools.dir/build.make CMakeFiles/cellworld_tools.dir/build
 .PHONY : cellworld_tools/fast
-
-#=============================================================================
-# Target rules for targets named cellworld_create_hexa_world
-
-# Build rule for target.
-cellworld_create_hexa_world: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_create_hexa_world
-.PHONY : cellworld_create_hexa_world
-
-# fast build rule for target.
-cellworld_create_hexa_world/fast:
-	$(MAKE) -f CMakeFiles/cellworld_create_hexa_world.dir/build.make CMakeFiles/cellworld_create_hexa_world.dir/build
-.PHONY : cellworld_create_hexa_world/fast
 
 #=============================================================================
 # Target rules for targets named cellworld_find_pois
@@ -246,19 +207,6 @@ cellworld_show_graph/fast:
 .PHONY : cellworld_show_graph/fast
 
 #=============================================================================
-# Target rules for targets named cellworld_convert_to_mice
-
-# Build rule for target.
-cellworld_convert_to_mice: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_convert_to_mice
-.PHONY : cellworld_convert_to_mice
-
-# fast build rule for target.
-cellworld_convert_to_mice/fast:
-	$(MAKE) -f CMakeFiles/cellworld_convert_to_mice.dir/build.make CMakeFiles/cellworld_convert_to_mice.dir/build
-.PHONY : cellworld_convert_to_mice/fast
-
-#=============================================================================
 # Target rules for targets named cellworld_create_poi_graph
 
 # Build rule for target.
@@ -285,17 +233,17 @@ cellworld_show_cell_group/fast:
 .PHONY : cellworld_show_cell_group/fast
 
 #=============================================================================
-# Target rules for targets named cellworld_create_hexa_canonical
+# Target rules for targets named cellworld_create_occlusions
 
 # Build rule for target.
-cellworld_create_hexa_canonical: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_create_hexa_canonical
-.PHONY : cellworld_create_hexa_canonical
+cellworld_create_occlusions: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cellworld_create_occlusions
+.PHONY : cellworld_create_occlusions
 
 # fast build rule for target.
-cellworld_create_hexa_canonical/fast:
-	$(MAKE) -f CMakeFiles/cellworld_create_hexa_canonical.dir/build.make CMakeFiles/cellworld_create_hexa_canonical.dir/build
-.PHONY : cellworld_create_hexa_canonical/fast
+cellworld_create_occlusions/fast:
+	$(MAKE) -f CMakeFiles/cellworld_create_occlusions.dir/build.make CMakeFiles/cellworld_create_occlusions.dir/build
+.PHONY : cellworld_create_occlusions/fast
 
 #=============================================================================
 # Target rules for targets named cellworld_show_world
@@ -309,19 +257,6 @@ cellworld_show_world: cmake_check_build_system
 cellworld_show_world/fast:
 	$(MAKE) -f CMakeFiles/cellworld_show_world.dir/build.make CMakeFiles/cellworld_show_world.dir/build
 .PHONY : cellworld_show_world/fast
-
-#=============================================================================
-# Target rules for targets named cellworld_create_cell_locations
-
-# Build rule for target.
-cellworld_create_cell_locations: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_create_cell_locations
-.PHONY : cellworld_create_cell_locations
-
-# fast build rule for target.
-cellworld_create_cell_locations/fast:
-	$(MAKE) -f CMakeFiles/cellworld_create_cell_locations.dir/build.make CMakeFiles/cellworld_create_cell_locations.dir/build
-.PHONY : cellworld_create_cell_locations/fast
 
 #=============================================================================
 # Target rules for targets named cellworld_create_paths
@@ -350,32 +285,6 @@ cellworld_create_predator_locations/fast:
 .PHONY : cellworld_create_predator_locations/fast
 
 #=============================================================================
-# Target rules for targets named cellworld_convert_to_vr
-
-# Build rule for target.
-cellworld_convert_to_vr: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_convert_to_vr
-.PHONY : cellworld_convert_to_vr
-
-# fast build rule for target.
-cellworld_convert_to_vr/fast:
-	$(MAKE) -f CMakeFiles/cellworld_convert_to_vr.dir/build.make CMakeFiles/cellworld_convert_to_vr.dir/build
-.PHONY : cellworld_convert_to_vr/fast
-
-#=============================================================================
-# Target rules for targets named cellworld_create_navigability
-
-# Build rule for target.
-cellworld_create_navigability: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_create_navigability
-.PHONY : cellworld_create_navigability
-
-# fast build rule for target.
-cellworld_create_navigability/fast:
-	$(MAKE) -f CMakeFiles/cellworld_create_navigability.dir/build.make CMakeFiles/cellworld_create_navigability.dir/build
-.PHONY : cellworld_create_navigability/fast
-
-#=============================================================================
 # Target rules for targets named cellworld_create_visibility
 
 # Build rule for target.
@@ -387,19 +296,6 @@ cellworld_create_visibility: cmake_check_build_system
 cellworld_create_visibility/fast:
 	$(MAKE) -f CMakeFiles/cellworld_create_visibility.dir/build.make CMakeFiles/cellworld_create_visibility.dir/build
 .PHONY : cellworld_create_visibility/fast
-
-#=============================================================================
-# Target rules for targets named cellworld_show_paths
-
-# Build rule for target.
-cellworld_show_paths: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_show_paths
-.PHONY : cellworld_show_paths
-
-# fast build rule for target.
-cellworld_show_paths/fast:
-	$(MAKE) -f CMakeFiles/cellworld_show_paths.dir/build.make CMakeFiles/cellworld_show_paths.dir/build
-.PHONY : cellworld_show_paths/fast
 
 src/map_symbols.o: src/map_symbols.cpp.o
 
@@ -481,168 +377,6 @@ src/screen_map.s: src/screen_map.cpp.s
 src/screen_map.cpp.s:
 	$(MAKE) -f CMakeFiles/cellworld_tools.dir/build.make CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.s
 .PHONY : src/screen_map.cpp.s
-
-src/tools/convert_to_mice_world.o: src/tools/convert_to_mice_world.cpp.o
-
-.PHONY : src/tools/convert_to_mice_world.o
-
-# target to build an object file
-src/tools/convert_to_mice_world.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_convert_to_mice.dir/build.make CMakeFiles/cellworld_convert_to_mice.dir/src/tools/convert_to_mice_world.cpp.o
-.PHONY : src/tools/convert_to_mice_world.cpp.o
-
-src/tools/convert_to_mice_world.i: src/tools/convert_to_mice_world.cpp.i
-
-.PHONY : src/tools/convert_to_mice_world.i
-
-# target to preprocess a source file
-src/tools/convert_to_mice_world.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_convert_to_mice.dir/build.make CMakeFiles/cellworld_convert_to_mice.dir/src/tools/convert_to_mice_world.cpp.i
-.PHONY : src/tools/convert_to_mice_world.cpp.i
-
-src/tools/convert_to_mice_world.s: src/tools/convert_to_mice_world.cpp.s
-
-.PHONY : src/tools/convert_to_mice_world.s
-
-# target to generate assembly for a file
-src/tools/convert_to_mice_world.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_convert_to_mice.dir/build.make CMakeFiles/cellworld_convert_to_mice.dir/src/tools/convert_to_mice_world.cpp.s
-.PHONY : src/tools/convert_to_mice_world.cpp.s
-
-src/tools/convert_to_vr_world.o: src/tools/convert_to_vr_world.cpp.o
-
-.PHONY : src/tools/convert_to_vr_world.o
-
-# target to build an object file
-src/tools/convert_to_vr_world.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_convert_to_vr.dir/build.make CMakeFiles/cellworld_convert_to_vr.dir/src/tools/convert_to_vr_world.cpp.o
-.PHONY : src/tools/convert_to_vr_world.cpp.o
-
-src/tools/convert_to_vr_world.i: src/tools/convert_to_vr_world.cpp.i
-
-.PHONY : src/tools/convert_to_vr_world.i
-
-# target to preprocess a source file
-src/tools/convert_to_vr_world.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_convert_to_vr.dir/build.make CMakeFiles/cellworld_convert_to_vr.dir/src/tools/convert_to_vr_world.cpp.i
-.PHONY : src/tools/convert_to_vr_world.cpp.i
-
-src/tools/convert_to_vr_world.s: src/tools/convert_to_vr_world.cpp.s
-
-.PHONY : src/tools/convert_to_vr_world.s
-
-# target to generate assembly for a file
-src/tools/convert_to_vr_world.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_convert_to_vr.dir/build.make CMakeFiles/cellworld_convert_to_vr.dir/src/tools/convert_to_vr_world.cpp.s
-.PHONY : src/tools/convert_to_vr_world.cpp.s
-
-src/tools/create_cell_locations.o: src/tools/create_cell_locations.cpp.o
-
-.PHONY : src/tools/create_cell_locations.o
-
-# target to build an object file
-src/tools/create_cell_locations.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_create_cell_locations.dir/build.make CMakeFiles/cellworld_create_cell_locations.dir/src/tools/create_cell_locations.cpp.o
-.PHONY : src/tools/create_cell_locations.cpp.o
-
-src/tools/create_cell_locations.i: src/tools/create_cell_locations.cpp.i
-
-.PHONY : src/tools/create_cell_locations.i
-
-# target to preprocess a source file
-src/tools/create_cell_locations.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_create_cell_locations.dir/build.make CMakeFiles/cellworld_create_cell_locations.dir/src/tools/create_cell_locations.cpp.i
-.PHONY : src/tools/create_cell_locations.cpp.i
-
-src/tools/create_cell_locations.s: src/tools/create_cell_locations.cpp.s
-
-.PHONY : src/tools/create_cell_locations.s
-
-# target to generate assembly for a file
-src/tools/create_cell_locations.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_create_cell_locations.dir/build.make CMakeFiles/cellworld_create_cell_locations.dir/src/tools/create_cell_locations.cpp.s
-.PHONY : src/tools/create_cell_locations.cpp.s
-
-src/tools/create_hexa_canonical.o: src/tools/create_hexa_canonical.cpp.o
-
-.PHONY : src/tools/create_hexa_canonical.o
-
-# target to build an object file
-src/tools/create_hexa_canonical.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_create_hexa_canonical.dir/build.make CMakeFiles/cellworld_create_hexa_canonical.dir/src/tools/create_hexa_canonical.cpp.o
-.PHONY : src/tools/create_hexa_canonical.cpp.o
-
-src/tools/create_hexa_canonical.i: src/tools/create_hexa_canonical.cpp.i
-
-.PHONY : src/tools/create_hexa_canonical.i
-
-# target to preprocess a source file
-src/tools/create_hexa_canonical.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_create_hexa_canonical.dir/build.make CMakeFiles/cellworld_create_hexa_canonical.dir/src/tools/create_hexa_canonical.cpp.i
-.PHONY : src/tools/create_hexa_canonical.cpp.i
-
-src/tools/create_hexa_canonical.s: src/tools/create_hexa_canonical.cpp.s
-
-.PHONY : src/tools/create_hexa_canonical.s
-
-# target to generate assembly for a file
-src/tools/create_hexa_canonical.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_create_hexa_canonical.dir/build.make CMakeFiles/cellworld_create_hexa_canonical.dir/src/tools/create_hexa_canonical.cpp.s
-.PHONY : src/tools/create_hexa_canonical.cpp.s
-
-src/tools/create_hexa_world.o: src/tools/create_hexa_world.cpp.o
-
-.PHONY : src/tools/create_hexa_world.o
-
-# target to build an object file
-src/tools/create_hexa_world.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_create_hexa_world.dir/build.make CMakeFiles/cellworld_create_hexa_world.dir/src/tools/create_hexa_world.cpp.o
-.PHONY : src/tools/create_hexa_world.cpp.o
-
-src/tools/create_hexa_world.i: src/tools/create_hexa_world.cpp.i
-
-.PHONY : src/tools/create_hexa_world.i
-
-# target to preprocess a source file
-src/tools/create_hexa_world.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_create_hexa_world.dir/build.make CMakeFiles/cellworld_create_hexa_world.dir/src/tools/create_hexa_world.cpp.i
-.PHONY : src/tools/create_hexa_world.cpp.i
-
-src/tools/create_hexa_world.s: src/tools/create_hexa_world.cpp.s
-
-.PHONY : src/tools/create_hexa_world.s
-
-# target to generate assembly for a file
-src/tools/create_hexa_world.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_create_hexa_world.dir/build.make CMakeFiles/cellworld_create_hexa_world.dir/src/tools/create_hexa_world.cpp.s
-.PHONY : src/tools/create_hexa_world.cpp.s
-
-src/tools/create_navigability.o: src/tools/create_navigability.cpp.o
-
-.PHONY : src/tools/create_navigability.o
-
-# target to build an object file
-src/tools/create_navigability.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_create_navigability.dir/build.make CMakeFiles/cellworld_create_navigability.dir/src/tools/create_navigability.cpp.o
-.PHONY : src/tools/create_navigability.cpp.o
-
-src/tools/create_navigability.i: src/tools/create_navigability.cpp.i
-
-.PHONY : src/tools/create_navigability.i
-
-# target to preprocess a source file
-src/tools/create_navigability.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_create_navigability.dir/build.make CMakeFiles/cellworld_create_navigability.dir/src/tools/create_navigability.cpp.i
-.PHONY : src/tools/create_navigability.cpp.i
-
-src/tools/create_navigability.s: src/tools/create_navigability.cpp.s
-
-.PHONY : src/tools/create_navigability.s
-
-# target to generate assembly for a file
-src/tools/create_navigability.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_create_navigability.dir/build.make CMakeFiles/cellworld_create_navigability.dir/src/tools/create_navigability.cpp.s
-.PHONY : src/tools/create_navigability.cpp.s
 
 src/tools/create_occlusions.o: src/tools/create_occlusions.cpp.o
 
@@ -779,33 +513,6 @@ src/tools/create_visibility.cpp.s:
 	$(MAKE) -f CMakeFiles/cellworld_create_visibility.dir/build.make CMakeFiles/cellworld_create_visibility.dir/src/tools/create_visibility.cpp.s
 .PHONY : src/tools/create_visibility.cpp.s
 
-src/tools/create_world_configuration.o: src/tools/create_world_configuration.cpp.o
-
-.PHONY : src/tools/create_world_configuration.o
-
-# target to build an object file
-src/tools/create_world_configuration.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_create_world_configuration.dir/build.make CMakeFiles/cellworld_create_world_configuration.dir/src/tools/create_world_configuration.cpp.o
-.PHONY : src/tools/create_world_configuration.cpp.o
-
-src/tools/create_world_configuration.i: src/tools/create_world_configuration.cpp.i
-
-.PHONY : src/tools/create_world_configuration.i
-
-# target to preprocess a source file
-src/tools/create_world_configuration.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_create_world_configuration.dir/build.make CMakeFiles/cellworld_create_world_configuration.dir/src/tools/create_world_configuration.cpp.i
-.PHONY : src/tools/create_world_configuration.cpp.i
-
-src/tools/create_world_configuration.s: src/tools/create_world_configuration.cpp.s
-
-.PHONY : src/tools/create_world_configuration.s
-
-# target to generate assembly for a file
-src/tools/create_world_configuration.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_create_world_configuration.dir/build.make CMakeFiles/cellworld_create_world_configuration.dir/src/tools/create_world_configuration.cpp.s
-.PHONY : src/tools/create_world_configuration.cpp.s
-
 src/tools/find_pois.o: src/tools/find_pois.cpp.o
 
 .PHONY : src/tools/find_pois.o
@@ -887,33 +594,6 @@ src/tools/show_graph.cpp.s:
 	$(MAKE) -f CMakeFiles/cellworld_show_graph.dir/build.make CMakeFiles/cellworld_show_graph.dir/src/tools/show_graph.cpp.s
 .PHONY : src/tools/show_graph.cpp.s
 
-src/tools/show_paths.o: src/tools/show_paths.cpp.o
-
-.PHONY : src/tools/show_paths.o
-
-# target to build an object file
-src/tools/show_paths.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_show_paths.dir/build.make CMakeFiles/cellworld_show_paths.dir/src/tools/show_paths.cpp.o
-.PHONY : src/tools/show_paths.cpp.o
-
-src/tools/show_paths.i: src/tools/show_paths.cpp.i
-
-.PHONY : src/tools/show_paths.i
-
-# target to preprocess a source file
-src/tools/show_paths.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_show_paths.dir/build.make CMakeFiles/cellworld_show_paths.dir/src/tools/show_paths.cpp.i
-.PHONY : src/tools/show_paths.cpp.i
-
-src/tools/show_paths.s: src/tools/show_paths.cpp.s
-
-.PHONY : src/tools/show_paths.s
-
-# target to generate assembly for a file
-src/tools/show_paths.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_show_paths.dir/build.make CMakeFiles/cellworld_show_paths.dir/src/tools/show_paths.cpp.s
-.PHONY : src/tools/show_paths.cpp.s
-
 src/tools/show_world.o: src/tools/show_world.cpp.o
 
 .PHONY : src/tools/show_world.o
@@ -976,29 +656,21 @@ help:
 	@echo "... depend"
 	@echo "... install/local"
 	@echo "... install"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... list_install_components"
-	@echo "... cellworld_create_occlusions"
-	@echo "... cellworld_create_world_configuration"
 	@echo "... cellworld_tools"
-	@echo "... cellworld_create_hexa_world"
 	@echo "... cellworld_find_pois"
 	@echo "... cellworld_show_graph"
-	@echo "... cellworld_convert_to_mice"
 	@echo "... cellworld_create_poi_graph"
 	@echo "... cellworld_show_cell_group"
-	@echo "... cellworld_create_hexa_canonical"
+	@echo "... list_install_components"
+	@echo "... cellworld_create_occlusions"
 	@echo "... cellworld_show_world"
+	@echo "... test"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... install/strip"
-	@echo "... cellworld_create_cell_locations"
 	@echo "... cellworld_create_paths"
 	@echo "... cellworld_create_predator_locations"
-	@echo "... cellworld_convert_to_vr"
-	@echo "... cellworld_create_navigability"
 	@echo "... cellworld_create_visibility"
-	@echo "... test"
-	@echo "... cellworld_show_paths"
 	@echo "... src/map_symbols.o"
 	@echo "... src/map_symbols.i"
 	@echo "... src/map_symbols.s"
@@ -1008,24 +680,6 @@ help:
 	@echo "... src/screen_map.o"
 	@echo "... src/screen_map.i"
 	@echo "... src/screen_map.s"
-	@echo "... src/tools/convert_to_mice_world.o"
-	@echo "... src/tools/convert_to_mice_world.i"
-	@echo "... src/tools/convert_to_mice_world.s"
-	@echo "... src/tools/convert_to_vr_world.o"
-	@echo "... src/tools/convert_to_vr_world.i"
-	@echo "... src/tools/convert_to_vr_world.s"
-	@echo "... src/tools/create_cell_locations.o"
-	@echo "... src/tools/create_cell_locations.i"
-	@echo "... src/tools/create_cell_locations.s"
-	@echo "... src/tools/create_hexa_canonical.o"
-	@echo "... src/tools/create_hexa_canonical.i"
-	@echo "... src/tools/create_hexa_canonical.s"
-	@echo "... src/tools/create_hexa_world.o"
-	@echo "... src/tools/create_hexa_world.i"
-	@echo "... src/tools/create_hexa_world.s"
-	@echo "... src/tools/create_navigability.o"
-	@echo "... src/tools/create_navigability.i"
-	@echo "... src/tools/create_navigability.s"
 	@echo "... src/tools/create_occlusions.o"
 	@echo "... src/tools/create_occlusions.i"
 	@echo "... src/tools/create_occlusions.s"
@@ -1041,9 +695,6 @@ help:
 	@echo "... src/tools/create_visibility.o"
 	@echo "... src/tools/create_visibility.i"
 	@echo "... src/tools/create_visibility.s"
-	@echo "... src/tools/create_world_configuration.o"
-	@echo "... src/tools/create_world_configuration.i"
-	@echo "... src/tools/create_world_configuration.s"
 	@echo "... src/tools/find_pois.o"
 	@echo "... src/tools/find_pois.i"
 	@echo "... src/tools/find_pois.s"
@@ -1053,9 +704,6 @@ help:
 	@echo "... src/tools/show_graph.o"
 	@echo "... src/tools/show_graph.i"
 	@echo "... src/tools/show_graph.s"
-	@echo "... src/tools/show_paths.o"
-	@echo "... src/tools/show_paths.i"
-	@echo "... src/tools/show_paths.s"
 	@echo "... src/tools/show_world.o"
 	@echo "... src/tools/show_world.i"
 	@echo "... src/tools/show_world.s"

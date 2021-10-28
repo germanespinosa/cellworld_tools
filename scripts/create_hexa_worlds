@@ -7,6 +7,6 @@ do
     entropy=$(printf %.1f "$((te))e-1")
     name=$(echo "hexa_${i}_${e}")
     #echo "$name"
-    ./cellworld_create_hexa_world -world_name "$name" -seed $i -target_entropy "$entropy" | cw_save_item world "$name"
+    cellworld_create_occlusions -world "$name" | ./save_item cell_group "${name}.occlusions"
   done
 done

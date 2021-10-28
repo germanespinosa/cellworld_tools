@@ -15,6 +15,6 @@ struct Parameters : Parameters_builder{
 int main(int argc, char **argv) {
     Parameters p;
     p.load(argc, argv);
-    cout << p.world.create_cell_group().free_cells();
+    cout << p.world.create_cell_group().occluded_cells();
     return 0;
 }

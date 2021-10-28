@@ -6,10 +6,12 @@ using namespace cell_world;
 using namespace std;
 
 struct Parameters : Parameters_builder{
-    World world;
+    World_configuration world_configuration;
+    Cell_group occlusions;
     Coordinates_list extra_pois;
     Parameters_definitions({
-       Add_web_resource(world, ({"world"}));
+       Add_web_resource(world_configuration, ({"world_configuration"}));
+       Add_web_resource(occlusions, ({"cell_group","world_configuration","occlusions"}));
        Add_value(extra_pois);
    })
 };
@@ -36,16 +38,17 @@ json_cpp::Json_vector<Connection_pattern> get_directions (Connection_pattern cp)
 int main(int argc, char **argv) {
     Parameters p;
     p.load(argc, argv);
-    auto directions = get_directions(p.world.connection_pattern);
-    Graph graph = p.world.create_graph();
-    Cell_group group = p.world.create_cell_group();
+    World world (p.world_configuration);
+    auto directions = get_directions(world.connection_pattern);
+    Graph graph = world.create_graph();
+    Cell_group group = world.create_cell_group();
     Map map(group);
     Cell_group extra_pois;
     for (auto c : p.extra_pois) extra_pois.add(map[c]);
     Cell_group pois;
     vector<double> connectivity (group.size(),0);
-    for (const Cell &cell : p.world.cells) if (! cell.occluded) connectivity[cell.id] = graph[cell].size();
-    for (const Cell &cell : p.world.cells) {
+    for (const Cell &cell : world.cells) if (! cell.occluded) connectivity[cell.id] = graph[cell].size();
+    for (const Cell &cell : world.cells) {
         if (cell.occluded) continue;
         if (extra_pois.contains(cell)) {
             pois.add(cell);

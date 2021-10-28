@@ -21,13 +21,7 @@
 /usr/local/bin/cellworld_show_world
 /usr/local/bin/cellworld_find_pois
 /usr/local/bin/cellworld_create_paths
-/usr/local/bin/cellworld_show_paths
 /usr/local/bin/cellworld_create_visibility
-/usr/local/bin/cellworld_create_navigability
 /usr/local/bin/cellworld_create_poi_graph
 /usr/local/bin/cellworld_create_predator_locations
-/usr/local/bin/cellworld_convert_to_vr
-/usr/local/bin/cellworld_convert_to_mice
-/usr/local/bin/cellworld_create_world_configuration
 /usr/local/bin/cellworld_create_occlusions
-/usr/local/bin/cellworld_create_cell_locations

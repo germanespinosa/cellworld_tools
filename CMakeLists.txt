@@ -64,12 +64,6 @@ target_link_libraries( cellworld_show_cell_group PUBLIC cellworld_tools )
 add_executable(cellworld_show_world src/tools/show_world.cpp)
 target_link_libraries( cellworld_show_world PUBLIC cellworld_tools )
 
-add_executable(cellworld_convert_to_vr src/tools/convert_to_vr_world.cpp)
-target_link_libraries( cellworld_convert_to_vr PUBLIC cellworld_tools )
-
-add_executable(cellworld_convert_to_mice src/tools/convert_to_mice_world.cpp)
-target_link_libraries( cellworld_convert_to_mice PUBLIC cellworld_tools )
-
 add_executable(cellworld_show_graph src/tools/show_graph.cpp)
 target_link_libraries( cellworld_show_graph PUBLIC cellworld_tools )
 
@@ -85,27 +79,8 @@ target_link_libraries( cellworld_create_poi_graph PUBLIC cellworld_tools )
 add_executable(cellworld_create_visibility src/tools/create_visibility.cpp)
 target_link_libraries( cellworld_create_visibility PUBLIC cellworld_tools )
 
-add_executable(cellworld_create_navigability src/tools/create_navigability.cpp)
-target_link_libraries( cellworld_create_navigability PUBLIC cellworld_tools )
-
-add_executable(cellworld_show_paths src/tools/show_paths.cpp)
-target_link_libraries( cellworld_show_paths PUBLIC cellworld_tools )
-
-add_executable(cellworld_create_hexa_world src/tools/create_hexa_world.cpp)
-target_link_libraries( cellworld_create_hexa_world PUBLIC cellworld_tools )
-
-add_executable(cellworld_create_world_configuration src/tools/create_world_configuration.cpp)
-target_link_libraries( cellworld_create_world_configuration PUBLIC cellworld_tools )
-
 add_executable(cellworld_create_occlusions src/tools/create_occlusions.cpp)
 target_link_libraries( cellworld_create_occlusions PUBLIC cellworld_tools )
-
-add_executable(cellworld_create_cell_locations src/tools/create_cell_locations.cpp)
-target_link_libraries( cellworld_create_cell_locations PUBLIC cellworld_tools )
-
-add_executable(cellworld_create_hexa_canonical src/tools/create_hexa_canonical.cpp)
-target_link_libraries( cellworld_create_hexa_canonical PUBLIC cellworld_tools )
-
 
 ###
 ### TESTS
@@ -155,16 +130,10 @@ find_package(CatchTests CONFIG QUIET)
                     cellworld_show_world
                     cellworld_find_pois
                     cellworld_create_paths
-                    cellworld_show_paths
                     cellworld_create_visibility
-                    cellworld_create_navigability
                     cellworld_create_poi_graph
                     cellworld_create_predator_locations
-                    cellworld_convert_to_vr
-                    cellworld_convert_to_mice
-                    cellworld_create_world_configuration
                     cellworld_create_occlusions
-                    cellworld_create_cell_locations
             RUNTIME  DESTINATION ${CMAKE_INSTALL_BINDIR})
 
 #endif()
