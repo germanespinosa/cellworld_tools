@@ -96,25 +96,11 @@ CMakeFiles/cellworld_tools.dir/src/map_symbols.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cellworld_tools.dir/src/map_symbols.cpp.s"
 	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Research/robot/cellworld_tools/src/map_symbols.cpp -o CMakeFiles/cellworld_tools.dir/src/map_symbols.cpp.s
 
-CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.o: CMakeFiles/cellworld_tools.dir/flags.make
-CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.o: ../src/screen_map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.o"
-	/usr/bin/g++-10  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.o -c /mnt/c/Research/robot/cellworld_tools/src/screen_map.cpp
-
-CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.i"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Research/robot/cellworld_tools/src/screen_map.cpp > CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.i
-
-CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.s"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Research/robot/cellworld_tools/src/screen_map.cpp -o CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.s
-
 # Object files for target cellworld_tools
 cellworld_tools_OBJECTS = \
 "CMakeFiles/cellworld_tools.dir/src/parameters_builder.cpp.o" \
 "CMakeFiles/cellworld_tools.dir/src/web_resources.cpp.o" \
-"CMakeFiles/cellworld_tools.dir/src/map_symbols.cpp.o" \
-"CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.o"
+"CMakeFiles/cellworld_tools.dir/src/map_symbols.cpp.o"
 
 # External object files for target cellworld_tools
 cellworld_tools_EXTERNAL_OBJECTS =
@@ -122,10 +108,9 @@ cellworld_tools_EXTERNAL_OBJECTS =
 libcellworld_tools.a: CMakeFiles/cellworld_tools.dir/src/parameters_builder.cpp.o
 libcellworld_tools.a: CMakeFiles/cellworld_tools.dir/src/web_resources.cpp.o
 libcellworld_tools.a: CMakeFiles/cellworld_tools.dir/src/map_symbols.cpp.o
-libcellworld_tools.a: CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.o
 libcellworld_tools.a: CMakeFiles/cellworld_tools.dir/build.make
 libcellworld_tools.a: CMakeFiles/cellworld_tools.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libcellworld_tools.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Research/robot/cellworld_tools/cmake-build-release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libcellworld_tools.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/cellworld_tools.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cellworld_tools.dir/link.txt --verbose=$(VERBOSE)
 

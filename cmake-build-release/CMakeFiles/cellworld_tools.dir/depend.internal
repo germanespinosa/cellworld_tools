@@ -8,10 +8,6 @@ CMakeFiles/cellworld_tools.dir/src/parameters_builder.cpp.o
  ../include/cell_world_tools/parameters_builder.h
  ../include/cell_world_tools/web_resources.h
  /mnt/c/Research/robot/cellworld_tools/src/parameters_builder.cpp
-CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.o
- ../include/cell_world_tools/map_symbols.h
- ../include/cell_world_tools/screen_map.h
- /mnt/c/Research/robot/cellworld_tools/src/screen_map.cpp
 CMakeFiles/cellworld_tools.dir/src/web_resources.cpp.o
  ../include/cell_world_tools/web_resources.h
  /mnt/c/Research/robot/cellworld_tools/src/web_resources.cpp

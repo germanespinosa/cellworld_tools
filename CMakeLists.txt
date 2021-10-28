@@ -17,7 +17,6 @@ set(cellworld_tools_files
         src/parameters_builder.cpp
         src/web_resources.cpp
         src/map_symbols.cpp
-        src/screen_map.cpp
         )
 
 add_library(cellworld_tools ${cellworld_tools_files})
@@ -57,15 +56,6 @@ include_directories( include )
 
 add_executable(cellworld_find_pois src/tools/find_pois.cpp)
 target_link_libraries( cellworld_find_pois PUBLIC cellworld_tools )
-
-add_executable(cellworld_show_cell_group src/tools/show_cell_group.cpp)
-target_link_libraries( cellworld_show_cell_group PUBLIC cellworld_tools )
-
-add_executable(cellworld_show_world src/tools/show_world.cpp)
-target_link_libraries( cellworld_show_world PUBLIC cellworld_tools )
-
-add_executable(cellworld_show_graph src/tools/show_graph.cpp)
-target_link_libraries( cellworld_show_graph PUBLIC cellworld_tools )
 
 add_executable(cellworld_create_paths src/tools/create_paths.cpp)
 target_link_libraries( cellworld_create_paths PUBLIC cellworld_tools )
@@ -125,10 +115,7 @@ find_package(CatchTests CONFIG QUIET)
 
     include(GNUInstallDirs)
 
-    install(TARGETS cellworld_show_cell_group
-                    cellworld_show_graph
-                    cellworld_show_world
-                    cellworld_find_pois
+    install(TARGETS cellworld_find_pois
                     cellworld_create_paths
                     cellworld_create_visibility
                     cellworld_create_poi_graph

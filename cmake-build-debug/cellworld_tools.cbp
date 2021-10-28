@@ -27,16 +27,6 @@
 					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="install">
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="cellworld_tools">
 				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/libcellworld_tools.a" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
@@ -78,144 +68,6 @@
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_tools/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cellworld_find_pois">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_find_pois" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_find_pois"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cellworld_find_pois/fast">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_find_pois" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_find_pois/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cellworld_show_graph">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_show_graph" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_show_graph"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cellworld_show_graph/fast">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_show_graph" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_show_graph/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cellworld_create_poi_graph">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_create_poi_graph" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_create_poi_graph"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cellworld_create_poi_graph/fast">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_create_poi_graph" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_create_poi_graph/fast"/>
 					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -267,8 +119,8 @@
 					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="cellworld_show_cell_group">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_show_cell_group" prefix_auto="0" extension_auto="0"/>
+			<Target title="cellworld_find_pois">
+				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_find_pois" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -284,14 +136,14 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_show_cell_group"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_find_pois"/>
 					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="cellworld_show_cell_group/fast">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_show_cell_group" prefix_auto="0" extension_auto="0"/>
+			<Target title="cellworld_find_pois/fast">
+				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_find_pois" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
@@ -307,139 +159,63 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_show_cell_group/fast"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_find_pois/fast"/>
 					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="list_install_components">
+			<Target title="cellworld_create_poi_graph">
+				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_create_poi_graph" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/c++/10"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
+					<Add directory="/usr/include/c++/10/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_create_poi_graph"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cellworld_create_poi_graph/fast">
+				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_create_poi_graph" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/c++/10"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
+					<Add directory="/usr/include/c++/10/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_create_poi_graph/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
 				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cellworld_create_occlusions">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_create_occlusions" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_create_occlusions"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cellworld_create_occlusions/fast">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_create_occlusions" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_create_occlusions/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cellworld_show_world">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_show_world" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_show_world"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cellworld_show_world/fast">
-				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_show_world" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/c++/10"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
-					<Add directory="/usr/include/c++/10/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_show_world/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="test">
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
 					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -593,6 +369,92 @@
 					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cellworld_create_occlusions">
+				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_create_occlusions" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/c++/10"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
+					<Add directory="/usr/include/c++/10/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_create_occlusions"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cellworld_create_occlusions/fast">
+				<Option output="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/cellworld_create_occlusions" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Research/robot/cellworld_tools/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/c++/10"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/10"/>
+					<Add directory="/usr/include/c++/10/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/10/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 cellworld_create_occlusions/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Research/robot/cellworld_tools/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/mnt/c/Research/robot/cellworld_tools/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="/mnt/c/Research/robot/cellworld_tools/catchtests/map_symbols.cpp">
 			<Option target="cellworld_tools_tests"/>
@@ -607,9 +469,6 @@
 			<Option target="cellworld_tools"/>
 		</Unit>
 		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/parameters_builder.cpp">
-			<Option target="cellworld_tools"/>
-		</Unit>
-		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/screen_map.cpp">
 			<Option target="cellworld_tools"/>
 		</Unit>
 		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/tools/create_occlusions.cpp">
@@ -629,15 +488,6 @@
 		</Unit>
 		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/tools/find_pois.cpp">
 			<Option target="cellworld_find_pois"/>
-		</Unit>
-		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/tools/show_cell_group.cpp">
-			<Option target="cellworld_show_cell_group"/>
-		</Unit>
-		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/tools/show_graph.cpp">
-			<Option target="cellworld_show_graph"/>
-		</Unit>
-		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/tools/show_world.cpp">
-			<Option target="cellworld_show_world"/>
 		</Unit>
 		<Unit filename="/mnt/c/Research/robot/cellworld_tools/src/web_resources.cpp">
 			<Option target="cellworld_tools"/>

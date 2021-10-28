@@ -7,7 +7,6 @@ CMakeFiles/cellworld_show_world.dir/src/tools/show_world.cpp.o: ../include/cell_
 CMakeFiles/cellworld_show_world.dir/src/tools/show_world.cpp.o: ../include/cell_world_tools/map_symbols.h
 CMakeFiles/cellworld_show_world.dir/src/tools/show_world.cpp.o: ../include/cell_world_tools/message.h
 CMakeFiles/cellworld_show_world.dir/src/tools/show_world.cpp.o: ../include/cell_world_tools/parameters_builder.h
-CMakeFiles/cellworld_show_world.dir/src/tools/show_world.cpp.o: ../include/cell_world_tools/screen_map.h
 CMakeFiles/cellworld_show_world.dir/src/tools/show_world.cpp.o: ../include/cell_world_tools/web_resources.h
 CMakeFiles/cellworld_show_world.dir/src/tools/show_world.cpp.o: ../src/tools/show_world.cpp
 

@@ -5,7 +5,6 @@
 /usr/local/include/cell_world_tools/message.h
 /usr/local/include/cell_world_tools/parameters_builder.h
 /usr/local/include/cell_world_tools/random_agent.h
-/usr/local/include/cell_world_tools/screen_map.h
 /usr/local/include/cell_world_tools/web_resources.h
 /usr/local/include/cell_world_tools.h
 /usr/local/share/cmake/Cellworld_tools/Cellworld_toolsConfig.cmake
@@ -16,9 +15,6 @@
 /usr/local/bin/range
 /usr/local/bin/unique
 /usr/local/bin/worker
-/usr/local/bin/cellworld_show_cell_group
-/usr/local/bin/cellworld_show_graph
-/usr/local/bin/cellworld_show_world
 /usr/local/bin/cellworld_find_pois
 /usr/local/bin/cellworld_create_paths
 /usr/local/bin/cellworld_create_visibility

@@ -12,7 +12,6 @@ CMakeFiles/cellworld_tools_tests.dir/catchtests/web_resources.cpp.o: ../include/
 CMakeFiles/cellworld_tools_tests.dir/catchtests/web_resources.cpp.o: ../include/cell_world_tools/map_symbols.h
 CMakeFiles/cellworld_tools_tests.dir/catchtests/web_resources.cpp.o: ../include/cell_world_tools/message.h
 CMakeFiles/cellworld_tools_tests.dir/catchtests/web_resources.cpp.o: ../include/cell_world_tools/parameters_builder.h
-CMakeFiles/cellworld_tools_tests.dir/catchtests/web_resources.cpp.o: ../include/cell_world_tools/screen_map.h
 CMakeFiles/cellworld_tools_tests.dir/catchtests/web_resources.cpp.o: ../include/cell_world_tools/web_resources.h
 CMakeFiles/cellworld_tools_tests.dir/catchtests/web_resources.cpp.o: ../catchtests/web_resources.cpp
 

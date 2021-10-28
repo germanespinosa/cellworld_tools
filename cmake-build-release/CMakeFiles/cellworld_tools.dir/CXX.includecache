@@ -20,10 +20,6 @@ iostream
 cell_world_tools/web_resources.h
 -
 
-../include/cell_world_tools/screen_map.h
-cell_world_tools/map_symbols.h
--
-
 ../include/cell_world_tools/web_resources.h
 any
 -
@@ -44,10 +40,6 @@ cell_world_tools/map_symbols.h
 
 /mnt/c/Research/robot/cellworld_tools/src/parameters_builder.cpp
 cell_world_tools/parameters_builder.h
--
-
-/mnt/c/Research/robot/cellworld_tools/src/screen_map.cpp
-cell_world_tools/screen_map.h
 -
 
 /mnt/c/Research/robot/cellworld_tools/src/web_resources.cpp

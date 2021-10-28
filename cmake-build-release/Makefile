@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /mnt/c/Research/robot/cellworld_tools/cmake-build-release
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -79,6 +67,18 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -123,17 +123,17 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -194,19 +194,6 @@ cellworld_find_pois/fast:
 .PHONY : cellworld_find_pois/fast
 
 #=============================================================================
-# Target rules for targets named cellworld_show_graph
-
-# Build rule for target.
-cellworld_show_graph: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_show_graph
-.PHONY : cellworld_show_graph
-
-# fast build rule for target.
-cellworld_show_graph/fast:
-	$(MAKE) -f CMakeFiles/cellworld_show_graph.dir/build.make CMakeFiles/cellworld_show_graph.dir/build
-.PHONY : cellworld_show_graph/fast
-
-#=============================================================================
 # Target rules for targets named cellworld_create_poi_graph
 
 # Build rule for target.
@@ -218,45 +205,6 @@ cellworld_create_poi_graph: cmake_check_build_system
 cellworld_create_poi_graph/fast:
 	$(MAKE) -f CMakeFiles/cellworld_create_poi_graph.dir/build.make CMakeFiles/cellworld_create_poi_graph.dir/build
 .PHONY : cellworld_create_poi_graph/fast
-
-#=============================================================================
-# Target rules for targets named cellworld_show_cell_group
-
-# Build rule for target.
-cellworld_show_cell_group: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_show_cell_group
-.PHONY : cellworld_show_cell_group
-
-# fast build rule for target.
-cellworld_show_cell_group/fast:
-	$(MAKE) -f CMakeFiles/cellworld_show_cell_group.dir/build.make CMakeFiles/cellworld_show_cell_group.dir/build
-.PHONY : cellworld_show_cell_group/fast
-
-#=============================================================================
-# Target rules for targets named cellworld_create_occlusions
-
-# Build rule for target.
-cellworld_create_occlusions: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_create_occlusions
-.PHONY : cellworld_create_occlusions
-
-# fast build rule for target.
-cellworld_create_occlusions/fast:
-	$(MAKE) -f CMakeFiles/cellworld_create_occlusions.dir/build.make CMakeFiles/cellworld_create_occlusions.dir/build
-.PHONY : cellworld_create_occlusions/fast
-
-#=============================================================================
-# Target rules for targets named cellworld_show_world
-
-# Build rule for target.
-cellworld_show_world: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cellworld_show_world
-.PHONY : cellworld_show_world
-
-# fast build rule for target.
-cellworld_show_world/fast:
-	$(MAKE) -f CMakeFiles/cellworld_show_world.dir/build.make CMakeFiles/cellworld_show_world.dir/build
-.PHONY : cellworld_show_world/fast
 
 #=============================================================================
 # Target rules for targets named cellworld_create_paths
@@ -296,6 +244,19 @@ cellworld_create_visibility: cmake_check_build_system
 cellworld_create_visibility/fast:
 	$(MAKE) -f CMakeFiles/cellworld_create_visibility.dir/build.make CMakeFiles/cellworld_create_visibility.dir/build
 .PHONY : cellworld_create_visibility/fast
+
+#=============================================================================
+# Target rules for targets named cellworld_create_occlusions
+
+# Build rule for target.
+cellworld_create_occlusions: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cellworld_create_occlusions
+.PHONY : cellworld_create_occlusions
+
+# fast build rule for target.
+cellworld_create_occlusions/fast:
+	$(MAKE) -f CMakeFiles/cellworld_create_occlusions.dir/build.make CMakeFiles/cellworld_create_occlusions.dir/build
+.PHONY : cellworld_create_occlusions/fast
 
 src/map_symbols.o: src/map_symbols.cpp.o
 
@@ -350,33 +311,6 @@ src/parameters_builder.s: src/parameters_builder.cpp.s
 src/parameters_builder.cpp.s:
 	$(MAKE) -f CMakeFiles/cellworld_tools.dir/build.make CMakeFiles/cellworld_tools.dir/src/parameters_builder.cpp.s
 .PHONY : src/parameters_builder.cpp.s
-
-src/screen_map.o: src/screen_map.cpp.o
-
-.PHONY : src/screen_map.o
-
-# target to build an object file
-src/screen_map.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_tools.dir/build.make CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.o
-.PHONY : src/screen_map.cpp.o
-
-src/screen_map.i: src/screen_map.cpp.i
-
-.PHONY : src/screen_map.i
-
-# target to preprocess a source file
-src/screen_map.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_tools.dir/build.make CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.i
-.PHONY : src/screen_map.cpp.i
-
-src/screen_map.s: src/screen_map.cpp.s
-
-.PHONY : src/screen_map.s
-
-# target to generate assembly for a file
-src/screen_map.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_tools.dir/build.make CMakeFiles/cellworld_tools.dir/src/screen_map.cpp.s
-.PHONY : src/screen_map.cpp.s
 
 src/tools/create_occlusions.o: src/tools/create_occlusions.cpp.o
 
@@ -540,87 +474,6 @@ src/tools/find_pois.cpp.s:
 	$(MAKE) -f CMakeFiles/cellworld_find_pois.dir/build.make CMakeFiles/cellworld_find_pois.dir/src/tools/find_pois.cpp.s
 .PHONY : src/tools/find_pois.cpp.s
 
-src/tools/show_cell_group.o: src/tools/show_cell_group.cpp.o
-
-.PHONY : src/tools/show_cell_group.o
-
-# target to build an object file
-src/tools/show_cell_group.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_show_cell_group.dir/build.make CMakeFiles/cellworld_show_cell_group.dir/src/tools/show_cell_group.cpp.o
-.PHONY : src/tools/show_cell_group.cpp.o
-
-src/tools/show_cell_group.i: src/tools/show_cell_group.cpp.i
-
-.PHONY : src/tools/show_cell_group.i
-
-# target to preprocess a source file
-src/tools/show_cell_group.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_show_cell_group.dir/build.make CMakeFiles/cellworld_show_cell_group.dir/src/tools/show_cell_group.cpp.i
-.PHONY : src/tools/show_cell_group.cpp.i
-
-src/tools/show_cell_group.s: src/tools/show_cell_group.cpp.s
-
-.PHONY : src/tools/show_cell_group.s
-
-# target to generate assembly for a file
-src/tools/show_cell_group.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_show_cell_group.dir/build.make CMakeFiles/cellworld_show_cell_group.dir/src/tools/show_cell_group.cpp.s
-.PHONY : src/tools/show_cell_group.cpp.s
-
-src/tools/show_graph.o: src/tools/show_graph.cpp.o
-
-.PHONY : src/tools/show_graph.o
-
-# target to build an object file
-src/tools/show_graph.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_show_graph.dir/build.make CMakeFiles/cellworld_show_graph.dir/src/tools/show_graph.cpp.o
-.PHONY : src/tools/show_graph.cpp.o
-
-src/tools/show_graph.i: src/tools/show_graph.cpp.i
-
-.PHONY : src/tools/show_graph.i
-
-# target to preprocess a source file
-src/tools/show_graph.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_show_graph.dir/build.make CMakeFiles/cellworld_show_graph.dir/src/tools/show_graph.cpp.i
-.PHONY : src/tools/show_graph.cpp.i
-
-src/tools/show_graph.s: src/tools/show_graph.cpp.s
-
-.PHONY : src/tools/show_graph.s
-
-# target to generate assembly for a file
-src/tools/show_graph.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_show_graph.dir/build.make CMakeFiles/cellworld_show_graph.dir/src/tools/show_graph.cpp.s
-.PHONY : src/tools/show_graph.cpp.s
-
-src/tools/show_world.o: src/tools/show_world.cpp.o
-
-.PHONY : src/tools/show_world.o
-
-# target to build an object file
-src/tools/show_world.cpp.o:
-	$(MAKE) -f CMakeFiles/cellworld_show_world.dir/build.make CMakeFiles/cellworld_show_world.dir/src/tools/show_world.cpp.o
-.PHONY : src/tools/show_world.cpp.o
-
-src/tools/show_world.i: src/tools/show_world.cpp.i
-
-.PHONY : src/tools/show_world.i
-
-# target to preprocess a source file
-src/tools/show_world.cpp.i:
-	$(MAKE) -f CMakeFiles/cellworld_show_world.dir/build.make CMakeFiles/cellworld_show_world.dir/src/tools/show_world.cpp.i
-.PHONY : src/tools/show_world.cpp.i
-
-src/tools/show_world.s: src/tools/show_world.cpp.s
-
-.PHONY : src/tools/show_world.s
-
-# target to generate assembly for a file
-src/tools/show_world.cpp.s:
-	$(MAKE) -f CMakeFiles/cellworld_show_world.dir/build.make CMakeFiles/cellworld_show_world.dir/src/tools/show_world.cpp.s
-.PHONY : src/tools/show_world.cpp.s
-
 src/web_resources.o: src/web_resources.cpp.o
 
 .PHONY : src/web_resources.o
@@ -654,32 +507,26 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/local"
-	@echo "... install"
 	@echo "... cellworld_tools"
 	@echo "... cellworld_find_pois"
-	@echo "... cellworld_show_graph"
 	@echo "... cellworld_create_poi_graph"
-	@echo "... cellworld_show_cell_group"
-	@echo "... list_install_components"
-	@echo "... cellworld_create_occlusions"
-	@echo "... cellworld_show_world"
-	@echo "... test"
-	@echo "... rebuild_cache"
-	@echo "... edit_cache"
+	@echo "... install"
 	@echo "... install/strip"
 	@echo "... cellworld_create_paths"
 	@echo "... cellworld_create_predator_locations"
 	@echo "... cellworld_create_visibility"
+	@echo "... list_install_components"
+	@echo "... cellworld_create_occlusions"
+	@echo "... test"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... install/local"
 	@echo "... src/map_symbols.o"
 	@echo "... src/map_symbols.i"
 	@echo "... src/map_symbols.s"
 	@echo "... src/parameters_builder.o"
 	@echo "... src/parameters_builder.i"
 	@echo "... src/parameters_builder.s"
-	@echo "... src/screen_map.o"
-	@echo "... src/screen_map.i"
-	@echo "... src/screen_map.s"
 	@echo "... src/tools/create_occlusions.o"
 	@echo "... src/tools/create_occlusions.i"
 	@echo "... src/tools/create_occlusions.s"
@@ -698,15 +545,6 @@ help:
 	@echo "... src/tools/find_pois.o"
 	@echo "... src/tools/find_pois.i"
 	@echo "... src/tools/find_pois.s"
-	@echo "... src/tools/show_cell_group.o"
-	@echo "... src/tools/show_cell_group.i"
-	@echo "... src/tools/show_cell_group.s"
-	@echo "... src/tools/show_graph.o"
-	@echo "... src/tools/show_graph.i"
-	@echo "... src/tools/show_graph.s"
-	@echo "... src/tools/show_world.o"
-	@echo "... src/tools/show_world.i"
-	@echo "... src/tools/show_world.s"
 	@echo "... src/web_resources.o"
 	@echo "... src/web_resources.i"
 	@echo "... src/web_resources.s"
