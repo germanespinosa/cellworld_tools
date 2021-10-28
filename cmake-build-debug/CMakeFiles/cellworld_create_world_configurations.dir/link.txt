@@ -1,1 +1,0 @@
-/usr/bin/g++-10  -g   CMakeFiles/cellworld_create_world_configurations.dir/src/tools/create_world_configuration.cpp.o  -o cellworld_create_world_configurations  libcellworld_tools.a /usr/local/lib/libcellworld.a /usr/local/lib/libjson-cpp.a /usr/lib/x86_64-linux-gnu/libcurl.so 
